@@ -1,0 +1,17 @@
+use ieee.*;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_STD.all;
+
+type std_logic_matrix is array (natural range <>) of std_logic_vector;
+
+entity CNNConvolution is
+  generic(InputWidth: integer; InputHeight: integer);
+  port(
+    -- Clock and reset
+    clk   : in std_logic;
+    reset : in std_logic;
+
+    -- Matrix input
+    Cin : in std_logic_vector(InputWidth*InputHeight downto 0);
+  );
+end CNNConvolution;
