@@ -6,11 +6,22 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Compiling entity RippleCarryAdder
 -- Compiling architecture rtl of RippleCarryAdder
 
+} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/fulladder.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\fulladder.vhd}
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity FullAdder
+-- Compiling architecture rtl of FullAdder
+
 } {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNTypes.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNTypes.vhd}
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
 -- Compiling package cnn_types
+-- Compiling package body cnn_types
+-- Loading package cnn_types
 
 } {} {}}
