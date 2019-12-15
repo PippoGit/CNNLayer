@@ -15,7 +15,6 @@ entity CNNConvolution is
 
     -- Matrix input
     Cin   : in cnn_matrix_t(0 to InputWidth, 0 to InputHeight);
-    Filter: in cnn_matrix_t(0 to InputWidth, 0 to InputHeight);
 
 		-- Output
 		Cout  : out cnn_cell_t

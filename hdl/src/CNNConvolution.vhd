@@ -21,6 +21,7 @@ entity CNNConvolution is
   );
 end CNNConvolution;
 
+-- TODO: Add a register for the output!
 architecture CNNConvolution_Arch of CNNConvolution is
 	signal filter : cnn_matrix_t(0 to InputWidth, 0 to InputHeight);
 begin
