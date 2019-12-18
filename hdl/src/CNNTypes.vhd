@@ -1,5 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
 library work;
@@ -12,7 +13,7 @@ package cnn_types is
 	-- Types
 	subtype cnn_cell_t is std_logic_vector(N_BIT_INTEGER-1 downto 0);
 	type cnn_row_t     is array(natural range <>) of std_logic_vector(N_BIT_INTEGER-1 downto 0);
-	type cnn_col_t     is	array(natural range <>) of std_logic_vector(N_BIT_INTEGER-1 downto 0);
+	type cnn_col_t     is array(natural range <>) of std_logic_vector(N_BIT_INTEGER-1 downto 0);
 	type cnn_matrix_t  is array(natural range <>, natural range <>) of std_logic_vector(N_BIT_INTEGER-1 downto 0);
 
 

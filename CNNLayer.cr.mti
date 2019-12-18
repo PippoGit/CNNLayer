@@ -1,24 +1,57 @@
-C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/ripplecarryadder.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\ripplecarryadder.vhd}
+C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/dfc.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\dfc.vhd}
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity RippleCarryAdder
--- Compiling architecture rtl of RippleCarryAdder
+-- Compiling entity DFC
+-- Compiling architecture rtl of DFC
 
-} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/fulladder.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\fulladder.vhd}
+} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNConvolution.vhd {0 {vcom -work work -2002 -explicit -stats=none {C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNConvolution.vhd}
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity FullAdder
--- Compiling architecture rtl of FullAdder
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package cnn_types
+-- Compiling entity CNNConvolution
+-- Compiling architecture CNNConvolution_Arch of CNNConvolution
+** Error: C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNConvolution.vhd(45): Signal "Cin" is type sub-array #1 of work.cnn_types.cnn_matrix_t; expecting type work.cnn_types.cnn_cell_t.
+** Error: C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNConvolution.vhd(45): Array dimensionality of expected is 1; array dimensionality of actual is 2.
+** Error: C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNConvolution.vhd(50): VHDL Compiler exiting
 
-} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNTypes.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNTypes.vhd}
+} {12.0 15.0} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package cnn_types
+-- Compiling entity CNNRegister
+-- Compiling architecture CNNRegister_Arch of CNNRegister
+
+} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNLayer.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNLayer.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package cnn_types
+-- Compiling entity CNNLayer
+-- Compiling architecture CNNLayer_Arch of CNNLayer
+
+} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNTypes.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNTypes.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
 -- Loading package NUMERIC_STD
 -- Compiling package cnn_types
 -- Compiling package body cnn_types

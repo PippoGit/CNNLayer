@@ -1,0 +1,30 @@
+library ieee;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_STD.all;
+
+library work;
+use work.cnn_types.all;
+
+entity CNNRegister is
+  port (
+    -- Clock and reset
+    clk   : in std_logic;
+    reset : in std_logic;
+
+    -- In/Out
+    d_in  : in  cnn_cell_t;
+    d_out : out cnn_cell_t
+  );
+end CNNRegister;
+
+architecture CNNRegister_Arch of CNNRegister is
+begin
+  process(clk, reset)
+  begin
+    if reset = '1' then
+       d_out <= std_logic_vector(to_signed(0, d_out'length));
+    elsif (clk='1' and clk'event) then
+       d_out <= d_in;
+    end if;
+  end process;
+end CNNRegister_Arch
