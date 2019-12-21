@@ -7,23 +7,22 @@ use work.cnn_types.all;
 
 -- This is the piece of hardware that should produce one Cout
 entity CNNConvolution is
-  generic(InputWidth: natural; InputHeight: natural; NBits: natural);
+  generic(InputWidth: natural; InputHeight: natural);
   port(
     -- Clock and reset
     clk   : in std_logic;
     reset : in std_logic;
 
-    -- Matrix input
-    Cin   : in cnn_matrix_t(0 to InputWidth, 0 to InputHeight);
+    -- Input Matrices
+    Cin    : in cnn_matrix_t(0 to InputWidth-1, 0 to InputHeight-1);
+    filter : in cnn_matrix_t(0 to InputWidth-1, 0 to InputHeight-1);
 
-    -- Output
+    -- Output Cell
     Cout  : out cnn_cell_t
   );
 end CNNConvolution;
 
--- TODO: Add a register for the output!
 architecture CNNConvolution_Arch of CNNConvolution is
-  signal filter  : cnn_matrix_t(0 to InputWidth, 0 to InputHeight);
   signal convres : cnn_cell_t;
 
   component CNNRegister is
@@ -43,6 +42,5 @@ begin
     d_in  => convres,
     d_out => Cout 
   );
-
   convres <= Cin*filter;
 end CNNConvolution_Arch;
