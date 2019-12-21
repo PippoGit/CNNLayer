@@ -22,7 +22,7 @@ begin
   process(clk, reset)
   begin
     if reset = '1' then
-       d_out <= std_logic_vector(to_signed(0, d_out'length));
+       d_out <= (others => '0');
     elsif (clk='1' and clk'event) then
        d_out <= d_in;
     end if;
