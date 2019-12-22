@@ -16,8 +16,8 @@ Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 Z5 w1576935460
 Z6 dC:/Users/Filippo/Desktop/Electronics/CNNLayer
-Z7 8C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNTypes.vhd
-Z8 FC:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNTypes.vhd
+Z7 8C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNTypes.vhd
+Z8 FC:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNTypes.vhd
 l0
 L8
 VViHB;ibnS@[lRZN9A@0>Z3
@@ -25,11 +25,11 @@ VViHB;ibnS@[lRZN9A@0>Z3
 Z9 OP;C;10.4a;61
 32
 b1
-Z10 !s110 1576950766
+Z10 !s110 1577026514
 !i10b 1
-Z11 !s108 1576950766.000000
-Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNTypes.vhd|
-Z13 !s107 C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNTypes.vhd|
+Z11 !s108 1577026514.000000
+Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNTypes.vhd|
+Z13 !s107 C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNTypes.vhd|
 !i113 1
 Z14 o-work work -2002 -explicit -O0
 Z15 tExplicit 1
@@ -64,19 +64,19 @@ R0
 R3
 R4
 R6
-Z18 8C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNConvolution.vhd
-Z19 FC:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNConvolution.vhd
+Z18 8C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNConvolution.vhd
+Z19 FC:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNConvolution.vhd
 l0
 L9
 VAj:oiUIX;7DnbA<:JMk`b3
 !s100 `^4NTRhim1];ikVioYSMe3
 R9
 32
-Z20 !s110 1576950767
+R10
 !i10b 1
-Z21 !s108 1576950767.000000
-Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNConvolution.vhd|
-Z23 !s107 C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNConvolution.vhd|
+R11
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNConvolution.vhd|
+Z21 !s107 C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNConvolution.vhd|
 !i113 1
 R14
 R15
@@ -94,16 +94,16 @@ VWoSc81WAJ]GAoLFIH1YV[2
 !s100 g?AiICH]f=_mHD]kei`>F1
 R9
 32
-R20
+R10
 !i10b 1
+R11
+R20
 R21
-R22
-R23
 !i113 1
 R14
 R15
 Ecnnfilterrom
-Z24 w1576935723
+Z22 w1576935723
 R1
 R2
 R16
@@ -111,19 +111,19 @@ R0
 R3
 R4
 R6
-Z25 8C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNFilterRom.vhd
-Z26 FC:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNFilterRom.vhd
+Z23 8C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNFilterRom.vhd
+Z24 FC:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNFilterRom.vhd
 l0
 L8
 VckC_mU3FAzJML46:0]U4T0
 !s100 >Va2C;6[SiM5HeO]Z[I_P3
 R9
 32
-Z27 !s110 1576950768
+Z25 !s110 1577026516
 !i10b 1
-Z28 !s108 1576950768.000000
-Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNFilterRom.vhd|
-Z30 !s107 C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNFilterRom.vhd|
+Z26 !s108 1577026515.000000
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNFilterRom.vhd|
+Z28 !s107 C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNFilterRom.vhd|
 !i113 1
 R14
 R15
@@ -141,16 +141,16 @@ VMz[3N7knNH7=l2Q`:Si>m0
 !s100 iUk57iB1:XIm2]dWZco`G2
 R9
 32
-R27
+R25
 !i10b 1
+R26
+R27
 R28
-R29
-R30
 !i113 1
 R14
 R15
 Ecnnlayer
-Z31 w1576949639
+Z29 w1577026061
 R1
 R2
 R16
@@ -158,19 +158,19 @@ R0
 R3
 R4
 R6
-Z32 8C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNLayer.vhd
-Z33 FC:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNLayer.vhd
+Z30 8C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNLayer.vhd
+Z31 FC:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNLayer.vhd
 l0
 L9
-VAFIhB^3MZAo152FI[lnz^1
-!s100 [KO9J7k8NM<JMHN;eQk8l3
+V@44_`BaMY7FBjL_3n77Cn1
+!s100 183PZ0`j<heJT0a<1Pc@W0
 R9
 32
-R20
+R10
 !i10b 1
-R21
-Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNLayer.vhd|
-Z35 !s107 C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNLayer.vhd|
+R11
+Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNLayer.vhd|
+Z33 !s107 C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNLayer.vhd|
 !i113 1
 R14
 R15
@@ -181,23 +181,23 @@ R16
 R0
 R3
 R4
-DEx4 work 8 cnnlayer 0 22 AFIhB^3MZAo152FI[lnz^1
-l51
-L22
-VGH<2WUod4I9JWU]bQdS<n1
-!s100 ^X@W6RgU[3S6jG7gPP>km3
+DEx4 work 8 cnnlayer 0 22 @44_`BaMY7FBjL_3n77Cn1
+l38
+L19
+V0zGF7_Z]nlm2[_2>iZoBJ2
+!s100 MHQX;4jCD3<O[T8I`I=F>0
 R9
 32
-R20
+R10
 !i10b 1
-R21
-R34
-R35
+R11
+R32
+R33
 !i113 1
 R14
 R15
 Ecnnlayer_tb
-Z36 w1576950764
+Z34 w1577026510
 R0
 R1
 R2
@@ -205,19 +205,19 @@ R16
 R3
 R4
 R6
-Z37 8C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/tb/CNNLayer_tb.vhd
-Z38 FC:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/tb/CNNLayer_tb.vhd
+Z35 8C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\tb\CNNLayer_tb.vhd
+Z36 FC:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\tb\CNNLayer_tb.vhd
 l0
 L7
 VQZzASmeMX^CPH@<3>B64b0
 !s100 Fc`]^YOWU]HENX[8bWaXK2
 R9
 32
-Z39 !s110 1576950769
+R25
 !i10b 1
-R28
-Z40 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/tb/CNNLayer_tb.vhd|
-Z41 !s107 C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/tb/CNNLayer_tb.vhd|
+Z37 !s108 1577026516.000000
+Z38 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\tb\CNNLayer_tb.vhd|
+Z39 !s107 C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\tb\CNNLayer_tb.vhd|
 !i113 1
 R14
 R15
@@ -228,23 +228,23 @@ R2
 R16
 R3
 R4
-Z42 DEx4 work 11 cnnlayer_tb 0 22 QZzASmeMX^CPH@<3>B64b0
-l46
+Z40 DEx4 work 11 cnnlayer_tb 0 22 QZzASmeMX^CPH@<3>B64b0
+l43
 L10
-V]QP[=XTE:0>@2:^QkGL>f1
-!s100 Ij9NPcE=?;>6z7?K<oU:M1
+VDXlFzRSHaQS;HbeB2VzA00
+!s100 ZohiG^MeeMma`A=JF7U?a2
 R9
 32
-R39
+R25
 !i10b 1
-R28
-R40
-R41
+R37
+R38
+R39
 !i113 1
 R14
 R15
 Ecnnregister
-Z43 w1576949061
+Z41 w1576949061
 R1
 R2
 R16
@@ -252,19 +252,19 @@ R0
 R3
 R4
 R6
-Z44 8C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd
-Z45 FC:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd
+Z42 8C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd
+Z43 FC:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd
 l0
 L8
 VcMl^4<4P>h6]=;Amc20GL1
 !s100 d4IIIn23im2n0PJ]NPYX92
 R9
 32
-R20
+Z44 !s110 1577026515
 !i10b 1
-R21
-Z46 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd|
-Z47 !s107 C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd|
+R11
+Z45 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd|
+Z46 !s107 C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd|
 !i113 1
 R14
 R15
@@ -282,32 +282,32 @@ VM7kG:alo5Z<off^a@4LRU0
 !s100 [bF>i8UE20^i80I<:`hdW0
 R9
 32
-R20
+R44
 !i10b 1
-R21
+R11
+R45
 R46
-R47
 !i113 1
 R14
 R15
 Edfc
-Z48 w1576701060
+Z47 w1576701060
 R3
 R4
 R6
-Z49 8C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/dfc.vhd
-Z50 FC:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/dfc.vhd
+Z48 8C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/dfc.vhd
+Z49 FC:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/dfc.vhd
 l0
 L4
 VWjL3XVB]FDfYD7`?lo;:F0
 !s100 f9SHVHKoMAb:=0Xd1XEHo1
 R9
 32
-R27
+R44
 !i10b 1
-R28
-Z51 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/dfc.vhd|
-Z52 !s107 C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/dfc.vhd|
+R26
+Z50 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/dfc.vhd|
+Z51 !s107 C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/dfc.vhd|
 !i113 1
 R14
 R15
@@ -321,32 +321,32 @@ VK20fDAaAeRNk;Q``aAjZ51
 !s100 `b0:fEJ@c0X5zDbe`7i_[1
 R9
 32
-R27
+R44
 !i10b 1
-R28
+R26
+R50
 R51
-R52
 !i113 1
 R14
 R15
 Edflipflop
-Z53 w1576701559
+Z52 w1576701559
 R3
 R4
 R6
-Z54 8C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/dff.vhd
-Z55 FC:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/dff.vhd
+Z53 8C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/dff.vhd
+Z54 FC:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/dff.vhd
 l0
 L6
 VjR]^fnJGYdIi@4ZZ2_fDm3
 !s100 0lV4>HDi_@RTH;@[I_BRW2
 R9
 32
-R27
+R44
 !i10b 1
-R21
-Z56 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/dff.vhd|
-Z57 !s107 C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/dff.vhd|
+R26
+Z55 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/dff.vhd|
+Z56 !s107 C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/dff.vhd|
 !i113 1
 R14
 R15
@@ -360,32 +360,32 @@ V7;e>oIDi`5ZhEXEYzl]j^3
 !s100 @FaCbDLzX5zP?QSn`lE?@1
 R9
 32
-R27
+R44
 !i10b 1
-R21
+R26
+R55
 R56
-R57
 !i113 1
 R14
 R15
 Efulladder
-Z58 w1576433597
+Z57 w1576433597
 R3
 R4
 R6
-Z59 8C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/fulladder.vhd
-Z60 FC:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/fulladder.vhd
+Z58 8C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/fulladder.vhd
+Z59 FC:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/fulladder.vhd
 l0
 L6
 V3XGa=lBNdKS3NogI>aT2C2
 !s100 KEZzHHU`J`]``9Kae=32H0
 R9
 32
-Z61 !s110 1576701157
+Z60 !s110 1576701157
 !i10b 1
-Z62 !s108 1576701157.000000
-Z63 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/fulladder.vhd|
-Z64 !s107 C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/fulladder.vhd|
+Z61 !s108 1576701157.000000
+Z62 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/fulladder.vhd|
+Z63 !s107 C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/fulladder.vhd|
 !i113 1
 R14
 R15
@@ -399,32 +399,32 @@ V9b=;fIndFV5QROi`S0oKG2
 !s100 ]ojfDI1gCYOT44lB^JOKj3
 R9
 32
-R61
+R60
 !i10b 1
+R61
 R62
 R63
-R64
 !i113 1
 R14
 R15
 Eripplecarryadder
-Z65 w1576431295
+Z64 w1576431295
 R3
 R4
 R6
-Z66 8C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/ripplecarryadder.vhd
-Z67 FC:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/ripplecarryadder.vhd
+Z65 8C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/ripplecarryadder.vhd
+Z66 FC:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/ripplecarryadder.vhd
 l0
 L6
 VhUQR3BizOA4m5HHU2TC633
 !s100 2j<L3QTboLHTiWFePD`CZ1
 R9
 32
-R61
+R60
 !i10b 1
-R62
-Z68 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/ripplecarryadder.vhd|
-Z69 !s107 C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/ripplecarryadder.vhd|
+R61
+Z67 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/ripplecarryadder.vhd|
+Z68 !s107 C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/ripplecarryadder.vhd|
 !i113 1
 R14
 R15
@@ -438,11 +438,11 @@ V>7GW@4;=AKZOYgndV=iCb1
 !s100 H6;Km=[7YYzO?bPf5gS683
 R9
 32
-R61
+R60
 !i10b 1
-R62
+R61
+R67
 R68
-R69
 !i113 1
 R14
 R15
