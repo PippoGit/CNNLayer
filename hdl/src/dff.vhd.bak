@@ -16,7 +16,7 @@ end DFlipFlop;
 architecture rtl of DFlipFlop is
   component DFC
   port (
-    d_in      : in  std_logic;
+    d_in   : in  std_logic;
     clk    : in  std_logic;
     reset  : in  std_logic;
     q      : out std_logic

@@ -4,10 +4,10 @@ use IEEE.numeric_STD.all;
 
 library work;
 use work.cnn_types.all;
-
+ 
 -- This is the piece of hardware that should produce one Cout
 entity CNNConvolution is
-  generic(InputWidth: natural; InputHeight: natural;);
+  generic(InputWidth: natural; InputHeight: natural);
   port(
     -- Clock and reset
     clk   : in std_logic;

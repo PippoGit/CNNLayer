@@ -4,7 +4,7 @@ use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
 library work;
-
+ 
 package cnn_types is
   -- Constants
   constant N_BIT_INTEGER : integer := 8;
@@ -30,8 +30,8 @@ package body cnn_types is
     variable conv : cnn_cell_t;
     variable pres : integer := 0;
   begin
-    for idx in 0 to f'length(1) loop
-      for idy in 0 to f'length(2) loop
+    for idx in 0 to f'length(1)-1 loop
+      for idy in 0 to f'length(2)-1 loop
         pres := pres + to_integer( signed(m(idx, idy))*signed(f(idx, idy)) );
       end loop;
     end loop;

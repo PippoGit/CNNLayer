@@ -33,7 +33,6 @@ architecture CNNLayer_Arch of CNNLayer is
   end component;
  
   -- signals to put all together
-  signal conv_to_mem  : cnn_cell_t := (others =>'0');
   signal filt_to_conv : cnn_matrix_t(0 to FILTER_WIDTH-1, 0 to FILTER_HEIGHT-1);
 
 begin
@@ -56,7 +55,7 @@ begin
       index_c   := 0;
       index_r   := 0;
       mem_index := 0;
-      CNNMemory <= (others => (others => '0')); -- reset the memory
+      CNNMemory <= (others => (others => 'U')); -- reset the memory
     elsif (clk='1' and clk'event) then
        if mem_index <  CNN_MEMORY_SIZE then
          if index_c + FILTER_WIDTH  = InputWidth + 1 then 
@@ -66,7 +65,6 @@ begin
 
          -- convolution for i-th output
          CNNMemory(mem_index) <= slice(Cin, index_r, index_c, FILTER_WIDTH, FILTER_HEIGHT)*filt_to_conv;
-         -- CNNMemory(mem_index) <= conv_to_mem;
 
          -- increment indices...
          index_c   := index_c + 1;

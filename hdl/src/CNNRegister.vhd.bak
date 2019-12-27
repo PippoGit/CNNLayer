@@ -18,7 +18,6 @@ entity CNNRegister is
 end CNNRegister;
 
 architecture CNNRegister_Arch of CNNRegister is
-  d_out <= (others => '0');
 begin
   process(clk, reset)
   begin

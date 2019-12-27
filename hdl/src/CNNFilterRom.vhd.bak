@@ -4,7 +4,7 @@ use IEEE.numeric_std.all;
 
 library work;
 use work.cnn_types.all;
-
+ 
 entity CNNFilterRom is
   port (
     filter_3x3 : out cnn_matrix_t(0 to 2, 0 to 2);
@@ -16,9 +16,9 @@ end CNNFilterRom;
 architecture CNNFilterRom_Arch of CNNFilterRom is
 begin
   filter_3x3 <= (
-     ("00000001", "00000001", "00000001"),
-     ("00000001", "00000001", "00000001"),
-     ("00000001", "00000001", "00000001") 
+     ("00000001", "00000000", "00000001"),
+     ("00000000", "00000001", "00000000"),
+     ("00000001", "00000000", "00000001") 
   );
 
   filter_4x4 <= (

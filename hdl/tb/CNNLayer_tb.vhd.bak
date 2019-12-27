@@ -16,7 +16,7 @@ architecture bhv of cnnlayer_tb is
 
   -- Testbench signals
   signal clk_tb         : std_logic := '0';
-  signal reset_tb       : std_logic := '0'; 
+  signal reset_tb       : std_logic := '1'; 
   signal end_sim        : std_logic := '1';
 
   signal Cin : cnn_matrix_t(0 to INPUT_WIDTH-1, 0 to INPUT_HEIGHT-1) := (
