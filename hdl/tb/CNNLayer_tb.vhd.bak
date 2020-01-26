@@ -14,6 +14,9 @@ architecture bhv of cnnlayer_tb is
   constant INPUT_WIDTH  : natural := 5;
   constant INPUT_HEIGHT : natural := 5;
 
+  constant FILTER_WIDTH  : natural := 3;
+  constant FILTER_HEIGHT : natural := 3;
+
   -- Testbench signals
   signal clk_tb         : std_logic := '0';
   signal reset_tb       : std_logic := '1'; 
@@ -26,17 +29,23 @@ architecture bhv of cnnlayer_tb is
     ("00000000", "00000000", "00000001", "00000001", "00000000"),
     ("00000000", "00000001", "00000001", "00000000", "00000000")
   );
+
+  signal flt : cnn_matrix_t(0 to FILTER_WIDTH-1, 0 to FILTER_HEIGHT-1) := (
+     ("00000001", "00000000", "00000001"),
+     ("00000000", "00000001", "00000000"),
+     ("00000001", "00000000", "00000001") 
+  );
   
-  -- Component to test (DUT) declaration
   component CNNLayer is
-    generic(InputWidth:natural; InputHeight:natural);
+    generic(InputWidth:natural; InputHeight:natural; FilterWidth:natural; FilterHeight:natural);
     port(
       -- Clock and reset
       clk   : in std_logic;
       reset : in std_logic;
+      Cin   : in cnn_matrix_t(0 to InputWidth-1,  0 to InputHeight-1);
+      flt   : in cnn_matrix_t(0 to FilterWidth-1, 0 to FilterHeight-1);
 
-      -- just a cell as output to test it...
-      Cin   : in  cnn_matrix_t(0 to InputWidth-1, 0 to InputHeight-1)
+      Cout  : out cnn_matrix_t(0 to FilterWidth-1, 0 to FilterHeight-1)
     );
   end component;
 
@@ -45,11 +54,13 @@ begin
   reset_tb <= '0' after T_RESET;
 
   test_CNN: CNNLayer
-  generic map (InputWidth => INPUT_WIDTH, InputHeight => INPUT_HEIGHT)
+  generic map (InputWidth => INPUT_WIDTH, InputHeight => INPUT_HEIGHT, 
+               FilterWidth => FILTER_WIDTH, FilterHeight => FILTER_HEIGHT)
   port map(
     clk   => clk_tb,      
     reset => reset_tb,
-    Cin   => Cin
+    Cin   => Cin,
+    flt   => flt
   );
 		
   cnnlayer_process: process(clk_tb, reset_tb)

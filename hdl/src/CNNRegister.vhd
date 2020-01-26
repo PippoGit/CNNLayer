@@ -4,7 +4,7 @@ use IEEE.numeric_STD.all;
 
 library work;
 use work.cnn_types.all;
- 
+
 entity CNNRegister is
   port (
     -- Clock and reset
