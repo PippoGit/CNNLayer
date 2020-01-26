@@ -22,30 +22,6 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Compiling entity CNNFilterRom
 -- Compiling architecture CNNFilterRom_Arch of CNNFilterRom
 
-} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNLayer.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNLayer.vhd}
-Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_UNSIGNED
--- Loading package cnn_types
--- Compiling entity CNNLayer
--- Compiling architecture CNNLayer_Arch of CNNLayer
-
-} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNRegister.vhd}
-Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_UNSIGNED
--- Loading package cnn_types
--- Compiling entity CNNRegister
--- Compiling architecture CNNRegister_Arch of CNNRegister
-
 } {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNTypes.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNTypes.vhd}
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD
