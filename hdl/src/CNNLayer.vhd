@@ -110,7 +110,7 @@ begin
     );
 
   -- Process
-  process(clk, reset)
+  process(clk, reset, stbl_cin, stbl_flt)
     variable index_r   : natural := 0;
     variable index_c   : natural := 0;
     variable mem_index : natural := 0;

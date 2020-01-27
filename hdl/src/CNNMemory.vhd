@@ -32,6 +32,7 @@ begin
   begin
     if reset = '0' then
       RAM <= (others => ("ZZZZZZZZ")); -- reset the memory
+      data_out <= "ZZZZZZZZ";
     elsif (clk='1' and clk'event) then
        -- Read Data
        if rd_en='1' and to_integer(unsigned(rd_addr)) < MemorySize then 

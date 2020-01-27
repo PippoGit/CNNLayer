@@ -87,7 +87,6 @@ begin
       t := 0;
       mem_rd_en_s    <= '0';
       mem_rd_addr_s  <= "ZZZZ";
-      mem_data_out_s <= "ZZZZZZZZ";
     elsif(clk_tb='1' and clk_tb'event) then
       case(t) is
         -- testing read from memory (10 clock cycles are enough for 5x5 + 3x3)

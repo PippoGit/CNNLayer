@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Mon Jan 27 16:42:36 2020
+| Date         : Mon Jan 27 17:26:34 2020
 | Host         : Bootcamp running 64-bit major release  (build 9200)
 | Command      : report_utilization -file CNNLayer_utilization_synth.rpt -pb CNNLayer_utilization_synth.pb
 | Design       : CNNLayer
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  876 |     0 |     17600 |  4.98 |
-|   LUT as Logic          |  876 |     0 |     17600 |  4.98 |
+| Slice LUTs*             |  879 |     0 |     17600 |  4.99 |
+|   LUT as Logic          |  879 |     0 |     17600 |  4.99 |
 |   LUT as Memory         |    0 |     0 |      6000 |  0.00 |
-| Slice Registers         |  413 |     0 |     35200 |  1.17 |
-|   Register as Flip Flop |  413 |     0 |     35200 |  1.17 |
+| Slice Registers         |  414 |     0 |     35200 |  1.18 |
+|   Register as Flip Flop |  414 |     0 |     35200 |  1.18 |
 |   Register as Latch     |    0 |     0 |     35200 |  0.00 |
 | F7 Muxes                |    0 |     0 |      8800 |  0.00 |
 | F8 Muxes                |    0 |     0 |      4400 |  0.00 |
@@ -54,7 +54,7 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 0     |          Yes |           - |          Set |
+| 1     |          Yes |           - |          Set |
 | 49    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
 | 364   |          Yes |       Reset |            - |
@@ -153,10 +153,11 @@ Table of Contents
 | LUT4     |  174 |                 LUT |
 | LUT3     |  153 |                 LUT |
 | CARRY4   |   88 |          CarryLogic |
-| LUT5     |   56 |                 LUT |
+| LUT5     |   57 |                 LUT |
 | FDCE     |   49 |        Flop & Latch |
-| OBUF     |    8 |                  IO |
-| LUT1     |    4 |                 LUT |
+| OBUFT    |    8 |                  IO |
+| LUT1     |    6 |                 LUT |
+| FDPE     |    1 |        Flop & Latch |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 

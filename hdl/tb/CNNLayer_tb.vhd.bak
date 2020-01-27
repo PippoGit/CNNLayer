@@ -91,7 +91,7 @@ begin
     elsif(clk_tb='1' and clk_tb'event) then
       case(t) is
         -- testing read from memory (10 clock cycles are enough for 5x5 + 3x3)
-        when 10 => mem_rd_en_s <= '1'; mem_rd_addr_s <= "0000";
+        when 10 => mem_rd_en_s   <= '1'; mem_rd_addr_s <= "0000";
         when 11 => mem_rd_addr_s <= "0001";
         when 12 => mem_rd_addr_s <= "0010";
         when 13 => mem_rd_addr_s <= "0011";
@@ -101,7 +101,7 @@ begin
         when 17 => mem_rd_addr_s <= "0111";
         when 18 => mem_rd_addr_s <= "1000";
         when 19 => mem_rd_en_s   <= '0'; 
-        when 30 => end_sim  <= '1';
+        when 30 => end_sim       <= '1';
         when others => null;
       end case;
       t := t + 1;
