@@ -1,0 +1,20 @@
+
+*** Running vivado
+    with args -log CNNLayer.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source CNNLayer.tcl -notrace
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source CNNLayer.tcl -notrace
+
+*** Halting run - EA reset detected ***
+
+
+
+    while executing
+"start_step init_design"
+    (file "CNNLayer.tcl" line 66)
+INFO: [Common 17-206] Exiting Vivado at Sun Jan 26 20:06:55 2020...

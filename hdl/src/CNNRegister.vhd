@@ -23,7 +23,7 @@ architecture CNNRegister_Arch of CNNRegister is
 begin
   process(clk, reset)
   begin
-    if reset = '1' then
+    if reset = '0' then
        d_out <= (others => (others => "ZZZZZZZZ")); -- reset the register
        stbl  <= '0';
     elsif (clk='1' and clk'event) then

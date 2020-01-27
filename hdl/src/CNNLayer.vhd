@@ -7,7 +7,8 @@ use work.cnn_types.all;
 
 
 entity CNNLayer is
-  generic(InputWidth:natural; InputHeight:natural; FilterWidth:natural; FilterHeight:natural);
+  generic(InputWidth:natural; InputHeight:natural; FilterWidth:natural; FilterHeight:natural;
+          AddressLength:natural);
   port (
     -- Clock and reset
     clk   : in std_logic;
@@ -15,8 +16,10 @@ entity CNNLayer is
     Cin   : in cnn_matrix_t(0 to InputWidth-1,  0 to InputHeight-1);
     flt   : in cnn_matrix_t(0 to FilterWidth-1, 0 to FilterHeight-1);
 
-    -- Output Channel
-    Cout : out cnn_matrix_t(0 to FilterWidth-1, 0 to FilterHeight-1)
+    -- Memory 
+    mem_rd_en    : in std_logic;
+    mem_rd_addr  : in std_logic_vector(AddressLength-1 downto 0);
+    mem_data_out : out cnn_cell_t
   );
 end CNNLayer;
 
@@ -25,9 +28,6 @@ architecture CNNLayer_Arch of CNNLayer is
   constant CNN_MEMORY_HEIGHT : natural := (InputHeight - FilterHeight + 1);
   constant CNN_MEMORY_WIDTH  : natural := (InputWidth - FilterWidth + 1);
   constant CNN_MEMORY_SIZE   : natural := CNN_MEMORY_HEIGHT*CNN_MEMORY_WIDTH;
-
-  -- type cnn_memory_t is array(0 to CNN_MEMORY_SIZE-1) of cnn_cell_t; 
-  signal CNNMemory : cnn_matrix_t(0 to FilterWidth-1, 0 to FilterHeight-1);
  
   signal cin_reg : cnn_matrix_t(0 to InputWidth-1, 0 to InputHeight-1);
   signal flt_reg : cnn_matrix_t(0 to FilterWidth-1, 0 to FilterHeight-1);
@@ -35,6 +35,10 @@ architecture CNNLayer_Arch of CNNLayer is
   signal stbl_cin : std_logic;
   signal stbl_flt : std_logic;
 
+  signal mem_data_s    : cnn_cell_t;
+  signal mem_wr_addr_s : std_logic_vector(AddressLength-1 downto 0);
+  signal mem_wr_en_s   : std_logic;
+  
   -- Register
   component CNNRegister is
     generic(CNNWidth:natural; CNNHeight:natural);
@@ -46,6 +50,26 @@ architecture CNNLayer_Arch of CNNLayer is
       stbl  : out std_logic
     );
   end component;
+
+  -- Memory
+  component CNNMemory is
+    generic(MemorySize:natural; AddressLength:natural);
+    port (
+      -- Clock and reset
+      clk      : in  std_logic;
+      reset    : in  std_logic;
+
+      wr_addr  : in  std_logic_vector(AddressLength-1 downto 0);
+      wr_en    : in  std_logic;
+
+      rd_addr  : in  std_logic_vector(AddressLength-1 downto 0);
+      rd_en    : in  std_logic;
+
+      data_in  : in  cnn_cell_t;
+      data_out : out cnn_cell_t
+    );
+  end component;
+
 begin
 
   -- Registers
@@ -69,28 +93,36 @@ begin
       stbl  => stbl_flt
     );
 
-  CoutRegister : CNNRegister
-    generic map(CNNWidth => CNN_MEMORY_WIDTH, CNNHeight => CNN_MEMORY_HEIGHT)
+  RAM: CNNMemory
+    generic map(MemorySize => CNN_MEMORY_SIZE, AddressLength => AddressLength)
     port map(
-      clk   => clk,
-      reset => reset,
-      d_in  => CNNMemory,
-      d_out => Cout,
-      stbl  => open
+      clk      => clk,
+      reset    => reset,
+
+      wr_addr  => mem_wr_addr_s,
+      wr_en    => mem_wr_en_s,
+
+      rd_en    => mem_rd_en,
+      rd_addr  => mem_rd_addr,
+
+      data_in  => mem_data_s,
+      data_out => mem_data_out
     );
 
   -- Process
-  process(clk, reset, stbl_cin, stbl_flt)
+  process(clk, reset)
     variable index_r   : natural := 0;
     variable index_c   : natural := 0;
     variable mem_index : natural := 0;
     variable sub_mat   : cnn_matrix_t(0 to InputWidth-1, 0 to InputHeight-1);
-begin
-    if reset = '1' then
+  begin
+    if reset = '0' then
+      -- reset stuff
       index_c   := 0;
       index_r   := 0;
       mem_index := 0;
-      CNNMemory <= (others => (others => "00000000")); -- reset the memory
+      mem_wr_en_s <= '0';
+
     elsif (clk='1' and clk'event and stbl_cin ='1' and stbl_flt='1') then
        if mem_index <  CNN_MEMORY_SIZE then
          if index_c + FilterWidth  = InputWidth + 1 then 
@@ -98,12 +130,17 @@ begin
            index_r := index_r + 1;
          end if;
 
-         -- convolution for i-th output
-         CNNMemory(index_r, index_c) <= slice(cin_reg, index_r, index_c, FilterWidth, FilterHeight)*flt_reg;
+         -- write to memory
+         mem_wr_addr_s <= std_logic_vector(to_unsigned(mem_index, AddressLength));
+         mem_data_s    <= slice(cin_reg, index_r, index_c, FilterWidth, FilterHeight)*flt_reg;
+         mem_wr_en_s   <= '1';
 
          -- increment indices...
          index_c   := index_c + 1;
          mem_index := mem_index + 1;
+       else 
+         -- convolution is done, i don't have to write to mem anymore
+         mem_wr_en_s <= '0';
        end if;
     end if;
   end process;

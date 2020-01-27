@@ -14,7 +14,8 @@ entity CNNRegister is
 
     -- In/Out
     d_in  : in  cnn_matrix_t(0 to CNNWidth-1, 0 to CNNHeight-1);
-    d_out : out cnn_matrix_t(0 to CNNWidth-1, 0 to CNNHeight-1)
+    d_out : out cnn_matrix_t(0 to CNNWidth-1, 0 to CNNHeight-1);
+    stbl  : out std_logic
   );
 end CNNRegister;
 
@@ -24,8 +25,10 @@ begin
   begin
     if reset = '1' then
        d_out <= (others => (others => "ZZZZZZZZ")); -- reset the register
+       stbl  <= '0';
     elsif (clk='1' and clk'event) then
        d_out <= d_in;
+       stbl  <= '1'; 
     end if;
   end process;
 end CNNRegister_Arch;

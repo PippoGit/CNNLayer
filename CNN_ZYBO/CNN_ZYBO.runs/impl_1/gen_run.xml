@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1580065592">
+  <File Type="OPT-HWDEF" Name="CNNLayer.hwdef"/>
+  <File Type="ROUTE-BUS-SKEW" Name="CNNLayer_bus_skew_routed.rpt"/>
+  <File Type="PA-DCP" Name="CNNLayer.dcp"/>
+  <File Type="BITSTR-BMM" Name="CNNLayer_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="CNNLayer_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="CNNLayer_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="CNNLayer_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="CNNLayer.tcl"/>
+  <File Type="OPT-TIMING" Name="CNNLayer_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="CNNLayer_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="CNNLayer_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="CNNLayer_reports.tcl"/>
+  <File Type="OPT-DRC" Name="CNNLayer_drc_opted.rpt"/>
+  <File Type="PWROPT-DCP" Name="CNNLayer_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="CNNLayer_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="CNNLayer_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="CNNLayer_placed.dcp"/>
+  <File Type="PLACE-IO" Name="CNNLayer_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="CNNLayer_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="CNNLayer_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="CNNLayer_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="CNNLayer_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="CNNLayer_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="CNNLayer_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="CNNLayer_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="CNNLayer_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="CNNLayer.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="CNNLayer_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="CNNLayer_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="CNNLayer_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="CNNLayer.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="CNNLayer_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="CNNLayer_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="CNNLayer_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="CNNLayer_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="CNNLayer_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="CNNLayer_drc_routed.pb"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="CNNLayer.ltx"/>
+  <File Type="ROUTE-DRC-RPX" Name="CNNLayer_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="CNNLayer.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="CNNLayer_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="CNNLayer_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-SYSDEF" Name="CNNLayer.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="CNNLayer_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="CNNLayer_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="CNNLayer_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="CNNLayer_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="CNNLayer_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="CNNLayer_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="CNNLayer_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="CNNLayer_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="CNNLayer_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="CNNLayer_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="CNNLayer_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="CNNLayer_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="CNNLayer_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="CNNLayer_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="CNNLayer_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="CNNLayer_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="CNNLayer_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="CNNLayer_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="CNNLayer.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="CNNLayer_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="CNNLayer.rbt"/>
+  <File Type="BITSTR-NKY" Name="CNNLayer.nky"/>
+  <File Type="BG-BGN" Name="CNNLayer.bgn"/>
+  <File Type="BG-DRC" Name="CNNLayer.drc"/>
+  <File Type="RDI-RDI" Name="CNNLayer.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../hdl/src/CNNTypes.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../hdl/src/CNNRegister.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../hdl/src/CNNLayer.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="CNNLayer"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/cnn_zybo_constraint.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/cnn_zybo_constraint.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>
