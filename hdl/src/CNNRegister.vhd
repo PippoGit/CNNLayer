@@ -24,7 +24,7 @@ begin
   process(clk, reset)
   begin
     if reset = '0' then
-       d_out <= (others => (others => "ZZZZZZZZ")); -- reset the register
+       d_out <= (others => (others => "00000000")); -- reset the register
        stbl  <= '0';
     elsif (clk='1' and clk'event) then
        d_out <= d_in;

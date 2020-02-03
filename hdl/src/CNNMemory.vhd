@@ -19,20 +19,20 @@ entity CNNMemory is
     rd_addr  : in  std_logic_vector(AddressLength-1 downto 0);
     rd_en    : in  std_logic;
 
-    data_in  : in  cnn_cell_t;
-    data_out : out cnn_cell_t
+    data_in  : in  cnn_outcell_t;
+    data_out : out cnn_outcell_t
   );
 end CNNMemory;
 
 architecture CNNMemory_Arch of CNNMemory is
-  type   RAM_t is array(0 to MemorySize-1) of cnn_cell_t;
+  type   RAM_t is array(0 to MemorySize-1) of cnn_outcell_t;
   signal RAM : ram_t;
 begin
   process (clk, reset)
   begin
     if reset = '0' then
-      RAM <= (others => ("ZZZZZZZZ")); -- reset the memory
-      data_out <= "ZZZZZZZZ";
+      RAM <= (others => ("00000000000000000")); -- reset the memory
+      data_out <= "00000000000000000";
     elsif (clk='1' and clk'event) then
        -- Read Data
        if rd_en='1' and to_integer(unsigned(rd_addr)) < MemorySize then 

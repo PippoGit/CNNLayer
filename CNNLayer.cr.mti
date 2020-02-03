@@ -10,7 +10,7 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Compiling entity cnnlayer_tb
 -- Compiling architecture bhv of cnnlayer_tb
 
-} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNMemory.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNMemory.vhd}
+} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNRegister.vhd}
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -19,8 +19,8 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Loading package std_logic_arith
 -- Loading package STD_LOGIC_UNSIGNED
 -- Loading package cnn_types
--- Compiling entity CNNMemory
--- Compiling architecture CNNMemory_Arch of CNNMemory
+-- Compiling entity CNNRegister
+-- Compiling architecture CNNRegister_Arch of CNNRegister
 
 } {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNTypes.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNTypes.vhd
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
@@ -34,7 +34,7 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Compiling package body cnn_types
 -- Loading package cnn_types
 
-} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNRegister.vhd}
+} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNMemory.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNMemory.vhd}
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -43,7 +43,7 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Loading package std_logic_arith
 -- Loading package STD_LOGIC_UNSIGNED
 -- Loading package cnn_types
--- Compiling entity CNNRegister
--- Compiling architecture CNNRegister_Arch of CNNRegister
+-- Compiling entity CNNMemory
+-- Compiling architecture CNNMemory_Arch of CNNMemory
 
 } {} {}}

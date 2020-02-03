@@ -1,0 +1,101 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Mon Feb  3 21:44:59 2020
+| Host         : Bootcamp running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file CNNLayer_control_sets_placed.rpt
+| Design       : CNNLayer
+| Device       : xc7z014s
+-------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    29 |
+| Unused register locations in slices containing registers |    97 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      1 |            1 |
+|      3 |            1 |
+|      4 |            1 |
+|      6 |            2 |
+|      7 |            7 |
+|     10 |            7 |
+|     11 |            2 |
+|     14 |            1 |
+|    16+ |            7 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               0 |            0 |
+| No           | No                    | Yes                    |             274 |          113 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |              21 |            6 |
+| Yes          | No                    | Yes                    |             208 |           76 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------+------------------------+-----------------------------------+------------------+----------------+
+| Clock Signal |      Enable Signal     |          Set/Reset Signal         | Slice Load Count | Bel Load Count |
++--------------+------------------------+-----------------------------------+------------------+----------------+
+|  clk         | CinRegister/sel        | FltRegister/reset_0               |                1 |              1 |
+|  clk         | CinRegister/sel        | RAM/clear                         |                1 |              3 |
+|  clk         | CinRegister/sel        | RAM/reset_0                       |                1 |              4 |
+|  clk         | RAM/RAM[4]_4           | RAM/clear                         |                3 |              6 |
+|  clk         | RAM/RAM[6]_6           | RAM/clear                         |                2 |              6 |
+|  clk         | RAM/RAM[3]_3           | RAM/clear                         |                3 |              7 |
+|  clk         | RAM/RAM[7]_7           | RAM/clear                         |                3 |              7 |
+|  clk         | RAM/RAM[2]_2           | RAM/clear                         |                2 |              7 |
+|  clk         | RAM/RAM[8]_8           | RAM/clear                         |                3 |              7 |
+|  clk         | RAM/RAM[1]_1           | RAM/clear                         |                3 |              7 |
+|  clk         | RAM/RAM[5]_5           | RAM/clear                         |                3 |              7 |
+|  clk         | RAM/RAM[0][16]_i_1_n_0 | RAM/clear                         |                2 |              7 |
+|  clk         | RAM/RAM[3]_3           | RAM/reset_0                       |                3 |             10 |
+|  clk         | RAM/RAM[7]_7           | RAM/reset_0                       |                5 |             10 |
+|  clk         | RAM/RAM[2]_2           | RAM/reset_0                       |                3 |             10 |
+|  clk         | RAM/RAM[8]_8           | RAM/reset_0                       |                3 |             10 |
+|  clk         | RAM/RAM[1]_1           | RAM/reset_0                       |                3 |             10 |
+|  clk         | RAM/RAM[5]_5           | RAM/reset_0                       |                3 |             10 |
+|  clk         | RAM/RAM[0][16]_i_1_n_0 | RAM/reset_0                       |                2 |             10 |
+|  clk         | RAM/RAM[4]_4           | RAM/reset_0                       |                3 |             11 |
+|  clk         | RAM/RAM[6]_6           | RAM/reset_0                       |                2 |             11 |
+|  clk         |                        | RAM/reset_0                       |                7 |             14 |
+|  clk         | RAM/data_out0          | FltRegister/reset_0               |               13 |             17 |
+|  clk         | CinRegister/E[0]       |                                   |                6 |             21 |
+|  clk         |                        | FltRegister/reset_0               |               14 |             24 |
+|  clk         | CinRegister/sel        | CinRegister/AR[0]                 |                9 |             30 |
+|  clk         |                        | RAM/clear                         |               17 |             46 |
+|  clk         |                        | CinRegister/AR[0]                 |               38 |             80 |
+|  clk         |                        | CinRegister/d_out[0,0][0]_i_1_n_0 |               37 |            110 |
++--------------+------------------------+-----------------------------------+------------------+----------------+
+
+

@@ -17,7 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-create_project -in_memory -part xc7z010clg400-1
+create_project -in_memory -part xc7z014sclg400-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -49,12 +49,12 @@ set_property used_in_implementation false [get_files C:/Users/Filippo/Desktop/El
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
-synth_design -top CNNLayer -part xc7z010clg400-1
+synth_design -top CNNLayer -part xc7z014sclg400-1 -mode out_of_context
 
 
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
 write_checkpoint -force -noxdef CNNLayer.dcp
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file CNNLayer_utilization_synth.rpt -pb CNNLayer_utilization_synth.pb"
+create_report "synth_2_synth_report_utilization_0" "report_utilization -file CNNLayer_utilization_synth.rpt -pb CNNLayer_utilization_synth.pb"
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

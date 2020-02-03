@@ -19,7 +19,7 @@ entity CNNLayer is
     -- Memory 
     mem_rd_en    : in std_logic;
     mem_rd_addr  : in std_logic_vector(AddressLength-1 downto 0);
-    mem_data_out : out cnn_cell_t
+    mem_data_out : out cnn_outcell_t
   );
 end CNNLayer;
 
@@ -35,7 +35,7 @@ architecture CNNLayer_Arch of CNNLayer is
   signal stbl_cin : std_logic;
   signal stbl_flt : std_logic;
 
-  signal mem_data_s    : cnn_cell_t;
+  signal mem_data_s    : cnn_outcell_t;
   signal mem_wr_addr_s : std_logic_vector(AddressLength-1 downto 0);
   signal mem_wr_en_s   : std_logic;
   
@@ -65,8 +65,8 @@ architecture CNNLayer_Arch of CNNLayer is
       rd_addr  : in  std_logic_vector(AddressLength-1 downto 0);
       rd_en    : in  std_logic;
 
-      data_in  : in  cnn_cell_t;
-      data_out : out cnn_cell_t
+      data_in  : in  cnn_outcell_t;
+      data_out : out cnn_outcell_t
     );
   end component;
 
@@ -123,26 +123,28 @@ begin
       mem_index := 0;
       mem_wr_en_s <= '0';
 
-    elsif (clk='1' and clk'event and stbl_cin ='1' and stbl_flt='1') then
-       if mem_index <  CNN_MEMORY_SIZE then
-         if index_c + FilterWidth  = InputWidth + 1 then 
-           index_c := 0;
-           index_r := index_r + 1;
+    elsif (clk='1' and clk'event) then
+       if (stbl_cin ='1' and stbl_flt='1') then
+         if mem_index <  CNN_MEMORY_SIZE then
+           if index_c + FilterWidth  = InputWidth + 1 then 
+             index_c := 0;
+             index_r := index_r + 1;
+           end if;
+    
+           -- write to memory
+           mem_wr_addr_s <= std_logic_vector(to_unsigned(mem_index, AddressLength));
+           mem_data_s    <= slice(cin_reg, index_r, index_c, FilterWidth, FilterHeight)*flt_reg;
+           mem_wr_en_s   <= '1';
+    
+           -- increment indices...
+           index_c   := index_c + 1;
+           mem_index := mem_index + 1;
+         else 
+           -- convolution is done, i don't have to write to mem anymore
+           mem_wr_en_s <= '0';
          end if;
-
-         -- write to memory
-         mem_wr_addr_s <= std_logic_vector(to_unsigned(mem_index, AddressLength));
-         mem_data_s    <= slice(cin_reg, index_r, index_c, FilterWidth, FilterHeight)*flt_reg;
-         mem_wr_en_s   <= '1';
-
-         -- increment indices...
-         index_c   := index_c + 1;
-         mem_index := mem_index + 1;
-       else 
-         -- convolution is done, i don't have to write to mem anymore
-         mem_wr_en_s <= '0';
        end if;
-    end if;
+     end if;
   end process;
   
   -- Output 

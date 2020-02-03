@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/Filippo/Desktop/Electronics/CNNLayer/CNN_ZYBO/CNN_ZYBO.runs/synth_1'
+HD_PWD='C:/Users/Filippo/Desktop/Electronics/CNNLayer/CNN_ZYBO/CNN_ZYBO.runs/synth_2'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
