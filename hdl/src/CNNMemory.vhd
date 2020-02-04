@@ -7,7 +7,7 @@ use work.cnn_types.all;
 
 
 entity CNNMemory is
-  generic(MemorySize:natural; AddressLength:natural);
+  generic(MemorySize:natural; AddressLength:natural; NumBitData:natural);
   port (
     -- Clock and reset
     clk      : in  std_logic;
@@ -19,20 +19,20 @@ entity CNNMemory is
     rd_addr  : in  std_logic_vector(AddressLength-1 downto 0);
     rd_en    : in  std_logic;
 
-    data_in  : in  cnn_outcell_t;
-    data_out : out cnn_outcell_t
+    data_in  : in  std_logic_vector(NumBitData-1 downto 0);
+    data_out : out std_logic_vector(NumBitData-1 downto 0)
   );
 end CNNMemory;
 
 architecture CNNMemory_Arch of CNNMemory is
-  type   RAM_t is array(0 to MemorySize-1) of cnn_outcell_t;
+  type   RAM_t is array(0 to MemorySize-1) of std_logic_vector(NumBitData-1 downto 0);
   signal RAM : ram_t;
 begin
   process (clk, reset)
   begin
     if reset = '0' then
-      RAM <= (others => ("00000000000000000")); -- reset the memory
-      data_out <= "00000000000000000";
+      RAM <= (others => ( others => ('0'))); -- reset the memory
+      data_out <= (others => ('0'));
     elsif (clk='1' and clk'event) then
        -- Read Data
        if rd_en='1' and to_integer(unsigned(rd_addr)) < MemorySize then 

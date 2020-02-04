@@ -11,8 +11,7 @@ package cnn_types is
   --
 
   -- Types
-  subtype cnn_cell_t is std_logic_vector(N_BIT_INTEGER-1 downto 0);
-  subtype cnn_outcell_t is std_logic_vector(2*N_BIT_INTEGER downto 0); -- don't forget overflow issues! 
+  subtype cnn_cell_t is std_logic_vector(N_BIT_INTEGER-1 downto 0); 
 
   type cnn_row_t     is array(natural range <>) of std_logic_vector(N_BIT_INTEGER-1 downto 0);
   type cnn_col_t     is array(natural range <>) of std_logic_vector(N_BIT_INTEGER-1 downto 0);
@@ -22,14 +21,13 @@ package cnn_types is
   type cnn_filter_enum is (CNNFilter_3x3, CNNFilter_4x4, CNNFilter_6x6);
 
   -- Define convolution as a product between cnn_matrix_t
-  function "*"(m, f : cnn_matrix_t) return cnn_outcell_t;
+  function "*"(m, f : cnn_matrix_t) return integer;
   function slice(m: cnn_matrix_t; row_index: natural; col_index: natural; w: natural; h:natural) return cnn_matrix_t;
 end cnn_types;
 
 
 package body cnn_types is
-  function "*"(m, f : cnn_matrix_t) return cnn_outcell_t is
-    variable conv : cnn_outcell_t;
+  function "*"(m, f : cnn_matrix_t) return integer is
     variable pres : integer := 0;
   begin
     for idx in 0 to f'length(1)-1 loop
@@ -37,8 +35,7 @@ package body cnn_types is
         pres := pres + to_integer( signed(m(idx, idy))*signed(f(idx, idy)) );
       end loop;
     end loop;
-    conv := std_logic_vector(to_signed(pres, conv'length));
-    return conv;
+    return pres;
   end function;
 
   function slice(m: cnn_matrix_t; row_index: natural; col_index: natural; w: natural; h:natural) return cnn_matrix_t is

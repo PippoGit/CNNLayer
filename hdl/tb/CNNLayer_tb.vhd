@@ -17,8 +17,9 @@ architecture bhv of cnnlayer_tb is
   constant FILTER_WIDTH   : natural := 3;
   constant FILTER_HEIGHT  : natural := 3;
 
-  constant ADDRESS_LENGTH : natural := 4; -- log(x, RAM_SIZE)
-  
+  constant ADDRESS_LENGTH : natural :=  4; -- log(x, RAM_SIZE)
+  constant CNN_OUTPUT_BIT : natural := 19;  -- 16 + log(2, FW*FH)
+   
 
   -- Testbench signals
   signal clk_tb         : std_logic := '0';
@@ -39,14 +40,14 @@ architecture bhv of cnnlayer_tb is
      ("00000001", "00000000", "00000001") 
   );
 
-  signal mem_data_out_s: cnn_cell_t;
-  signal mem_rd_en_s   : std_logic;
-  signal mem_rd_addr_s : std_logic_vector(ADDRESS_LENGTH-1 downto 0);
+  signal mem_data_out_s : std_logic_vector(CNN_OUTPUT_BIT-1 downto 0);
+  signal mem_rd_en_s    : std_logic;
+  signal mem_rd_addr_s  : std_logic_vector(ADDRESS_LENGTH-1 downto 0);
 
   
   component CNNLayer is
     generic(InputWidth:natural; InputHeight:natural; FilterWidth:natural; FilterHeight:natural;
-            AddressLength: natural);
+            AddressLength: natural; NumBitData:natural);
     port(
       -- Clock and reset 
       clk   : in std_logic;
@@ -57,7 +58,7 @@ architecture bhv of cnnlayer_tb is
       -- Memory 
       mem_rd_en    : in std_logic;
       mem_rd_addr  : in std_logic_vector(AddressLength-1 downto 0);
-      mem_data_out : out cnn_cell_t
+      mem_data_out : out std_logic_vector(NumBitData-1 downto 0)
     );
   end component;
 
@@ -68,7 +69,7 @@ begin
   test_CNN: CNNLayer
   generic map (InputWidth => INPUT_WIDTH, InputHeight => INPUT_HEIGHT, 
                FilterWidth => FILTER_WIDTH, FilterHeight => FILTER_HEIGHT,
-               AddressLength => ADDRESS_LENGTH)
+               AddressLength => ADDRESS_LENGTH, NumBitData => CNN_OUTPUT_BIT)
   port map(
     clk   => clk_tb,      
     reset => reset_tb,

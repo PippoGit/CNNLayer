@@ -8,7 +8,7 @@ use work.cnn_types.all;
 
 entity CNNLayer is
   generic(InputWidth:natural; InputHeight:natural; FilterWidth:natural; FilterHeight:natural;
-          AddressLength:natural);
+          AddressLength:natural; NumBitData:natural);
   port (
     -- Clock and reset
     clk   : in std_logic;
@@ -17,9 +17,9 @@ entity CNNLayer is
     flt   : in cnn_matrix_t(0 to FilterWidth-1, 0 to FilterHeight-1);
 
     -- Memory 
-    mem_rd_en    : in std_logic;
-    mem_rd_addr  : in std_logic_vector(AddressLength-1 downto 0);
-    mem_data_out : out cnn_outcell_t
+    mem_rd_en    : in  std_logic;
+    mem_rd_addr  : in  std_logic_vector(AddressLength-1 downto 0);
+    mem_data_out : out std_logic_vector(NumBitData-1 downto 0)
   );
 end CNNLayer;
 
@@ -35,7 +35,7 @@ architecture CNNLayer_Arch of CNNLayer is
   signal stbl_cin : std_logic;
   signal stbl_flt : std_logic;
 
-  signal mem_data_s    : cnn_outcell_t;
+  signal mem_data_s    : std_logic_vector(NumBitData-1 downto 0);
   signal mem_wr_addr_s : std_logic_vector(AddressLength-1 downto 0);
   signal mem_wr_en_s   : std_logic;
   
@@ -53,7 +53,7 @@ architecture CNNLayer_Arch of CNNLayer is
 
   -- Memory
   component CNNMemory is
-    generic(MemorySize:natural; AddressLength:natural);
+    generic(MemorySize:natural; AddressLength:natural; NumBitData:natural);
     port (
       -- Clock and reset
       clk      : in  std_logic;
@@ -65,8 +65,8 @@ architecture CNNLayer_Arch of CNNLayer is
       rd_addr  : in  std_logic_vector(AddressLength-1 downto 0);
       rd_en    : in  std_logic;
 
-      data_in  : in  cnn_outcell_t;
-      data_out : out cnn_outcell_t
+      data_in  : in  std_logic_vector(NumBitData-1 downto 0);
+      data_out : out std_logic_vector(NumBitData-1 downto 0)
     );
   end component;
 
@@ -94,7 +94,7 @@ begin
     );
 
   RAM: CNNMemory
-    generic map(MemorySize => CNN_MEMORY_SIZE, AddressLength => AddressLength)
+    generic map(MemorySize => CNN_MEMORY_SIZE, AddressLength => AddressLength, NumBitData => NumBitData)
     port map(
       clk      => clk,
       reset    => reset,
@@ -133,7 +133,7 @@ begin
     
            -- write to memory
            mem_wr_addr_s <= std_logic_vector(to_unsigned(mem_index, AddressLength));
-           mem_data_s    <= slice(cin_reg, index_r, index_c, FilterWidth, FilterHeight)*flt_reg;
+           mem_data_s    <= std_logic_vector(to_unsigned(slice(cin_reg, index_r, index_c, FilterWidth, FilterHeight)*flt_reg, NumBitData));
            mem_wr_en_s   <= '1';
     
            -- increment indices...
