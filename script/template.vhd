@@ -90,3 +90,12 @@ begin
     end if;
   end process;
 end bhv;
+
+-- INPUT MAT:
+{cin_matrix_numeric}
+
+-- OUTPUT MAT:
+{flt_matrix_numeric}
+
+-- EXPECTED RESULT:
+{res_matrix_numeric}
