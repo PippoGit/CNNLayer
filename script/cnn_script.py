@@ -2,6 +2,7 @@ import numpy as np
 from datetime import datetime
 import math 
 
+
 # constants
 NUM_BIT_INTEGER = 8
 MAX_NUMBER      = 2**(NUM_BIT_INTEGER-1) - 1 
@@ -17,16 +18,16 @@ def vhdl_matrix_literal(matrix):
     return vhdl_mat
 
 
-def commented_matrix_hex(matrix, numbit)
+def commented_matrix_hex(matrix, numbit):
     result = ''
     for i in range(0, matrix.shape[0]):
-        result += '--     ' + '    '.join([('"' + str(numbit) + "'h".format(val) + '"') for val in matrix[i]]) +  '\n'
+        result += '--     ' + '    '.join([str(hex(int(val))) for val in matrix[i]]) +  '\n'
     return result
 
 def commented_matrix(matrix):
     result = ''
     for i in range(0, matrix.shape[0]):
-        result += '--     ' + '    '.join([('"' + str(int(val)) + '"') for val in matrix[i]]) +  '\n'
+        result += '--     ' + '    '.join([(str(int(val))) for val in matrix[i]]) +  '\n'
     return result
 
 
@@ -59,7 +60,8 @@ def zip_parameters(cin, flt, addr_len, output_bit, start_simulation_time, end_si
         'cnn_output_bit'        : str(output_bit),
         'cin_matrix_numeric'    : commented_matrix(cin),
         'flt_matrix_numeric'    : commented_matrix(flt),
-        'res_matrix_numeric'    : commented_matrix_hex(conv(cin, flt), output_bit)
+        'res_matrix_numeric'    : commented_matrix_hex(conv(cin, flt), output_bit),
+        'res_dec_matrix_numeric': commented_matrix(conv(cin, flt))
     }
     return param
 
@@ -71,7 +73,7 @@ def generate_testbench(cin, flt):
     cnn_output_bit = NUM_BIT_INTEGER*2 + math.ceil(math.log(flt.size, 2))
 
     start_sim_time = mem_size + 5  # safe margin 5 should be enough
-    end_sim_time   = mem_size + 10 # safe margin 10 should be enough
+    end_sim_time   = start_sim_time + mem_size + 10 # safe margin 10 should be enough
 
     cases = ''
     for case in range(1, mem_size):
