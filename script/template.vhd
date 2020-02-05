@@ -9,7 +9,7 @@ end cnnlayer_tb;
 
 architecture bhv of cnnlayer_tb is
   constant T_CLK    : time := {clock_period};
-  constant T_RESET	: time := {reset_time};
+  constant T_RESET  : time := {reset_time};
 
   constant INPUT_WIDTH    : natural := {input_width};
   constant INPUT_HEIGHT   : natural := {input_height};
