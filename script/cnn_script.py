@@ -1,6 +1,7 @@
 import numpy as np
 from datetime import datetime
 import math 
+import time
 
 
 # constants
@@ -45,6 +46,7 @@ def conv(cin, flt):
 
 def zip_parameters(cin, flt, addr_len, output_bit, start_simulation_time, end_simulation_time, simulation_cases):
     param = {
+        'id'                    : str(int(round(time.time() * 1000)))[-6:],
         'clock_period'          : CLOCK_PERIOD,
         'reset_time'            : RESET_TIME,
         'input_width'           : str(cin.shape[1]),
