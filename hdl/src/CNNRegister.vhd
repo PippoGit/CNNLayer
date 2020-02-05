@@ -13,8 +13,8 @@ entity CNNRegister is
     reset : in std_logic;
 
     -- In/Out
-    d_in  : in  cnn_matrix_t(0 to CNNWidth-1, 0 to CNNHeight-1);
-    d_out : out cnn_matrix_t(0 to CNNWidth-1, 0 to CNNHeight-1);
+    d_in  : in  cnn_matrix_t(0 to CNNHeight-1, 0 to CNNWidth-1);
+    d_out : out cnn_matrix_t(0 to CNNHeight-1, 0 to CNNWidth-1);
     stbl  : out std_logic
   );
 end CNNRegister;

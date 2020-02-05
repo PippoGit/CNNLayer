@@ -13,8 +13,8 @@ entity CNNLayer is
     -- Clock and reset
     clk   : in std_logic;
     reset : in std_logic;
-    Cin   : in cnn_matrix_t(0 to InputWidth-1,  0 to InputHeight-1);
-    flt   : in cnn_matrix_t(0 to FilterWidth-1, 0 to FilterHeight-1);
+    Cin   : in cnn_matrix_t(0 to InputHeight-1,  0 to InputWidth-1);
+    flt   : in cnn_matrix_t(0 to FilterHeight-1, 0 to FilterWidth-1);
 
     -- Memory 
     mem_rd_en    : in  std_logic;
@@ -29,8 +29,8 @@ architecture CNNLayer_Arch of CNNLayer is
   constant CNN_MEMORY_WIDTH  : natural := (InputWidth - FilterWidth + 1);
   constant CNN_MEMORY_SIZE   : natural := CNN_MEMORY_HEIGHT*CNN_MEMORY_WIDTH;
  
-  signal cin_reg : cnn_matrix_t(0 to InputWidth-1, 0 to InputHeight-1);
-  signal flt_reg : cnn_matrix_t(0 to FilterWidth-1, 0 to FilterHeight-1);
+  signal cin_reg : cnn_matrix_t(0 to InputHeight-1, 0 to InputWidth-1);
+  signal flt_reg : cnn_matrix_t(0 to FilterHeight-1, 0 to FilterWidth-1);
 
   signal stbl_cin : std_logic;
   signal stbl_flt : std_logic;
@@ -45,8 +45,8 @@ architecture CNNLayer_Arch of CNNLayer is
     port (
       clk   : in  std_logic;
       reset : in  std_logic;
-      d_in  : in  cnn_matrix_t(0 to CNNWidth-1, 0 to CNNHeight-1);
-      d_out : out cnn_matrix_t(0 to CNNWidth-1, 0 to CNNHeight-1);
+      d_in  : in  cnn_matrix_t(0 to CNNHeight-1, 0 to CNNWidth-1);
+      d_out : out cnn_matrix_t(0 to CNNHeight-1, 0 to CNNWidth-1);
       stbl  : out std_logic
     );
   end component;
