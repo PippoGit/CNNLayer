@@ -17,6 +17,12 @@ def vhdl_matrix_literal(matrix):
     return vhdl_mat
 
 
+def commented_matrix_hex(matrix, numbit)
+    result = ''
+    for i in range(0, matrix.shape[0]):
+        result += '--     ' + '    '.join([('"' + str(numbit) + "'h".format(val) + '"') for val in matrix[i]]) +  '\n'
+    return result
+
 def commented_matrix(matrix):
     result = ''
     for i in range(0, matrix.shape[0]):
@@ -40,10 +46,10 @@ def zip_parameters(cin, flt, addr_len, output_bit, start_simulation_time, end_si
     param = {
         'clock_period'          : CLOCK_PERIOD,
         'reset_time'            : RESET_TIME,
-        'input_width'           : str(cin.shape[0]),
-        'input_height'          : str(cin.shape[1]),
-        'filter_width'          : str(flt.shape[0]),
-        'filter_height'         : str(flt.shape[1]),
+        'input_width'           : str(cin.shape[1]),
+        'input_height'          : str(cin.shape[0]),
+        'filter_width'          : str(flt.shape[1]),
+        'filter_height'         : str(flt.shape[0]),
         'address_length'        : str(addr_len),
         'start_simulation_time' : str(start_simulation_time),
         'end_simulation_time'   : str(end_simulation_time),
@@ -53,7 +59,7 @@ def zip_parameters(cin, flt, addr_len, output_bit, start_simulation_time, end_si
         'cnn_output_bit'        : str(output_bit),
         'cin_matrix_numeric'    : commented_matrix(cin),
         'flt_matrix_numeric'    : commented_matrix(flt),
-        'res_matrix_numeric'    : commented_matrix(conv(cin, flt))
+        'res_matrix_numeric'    : commented_matrix_hex(conv(cin, flt), output_bit)
     }
     return param
 
