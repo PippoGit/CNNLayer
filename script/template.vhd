@@ -94,8 +94,11 @@ end bhv;
 -- INPUT MAT:
 {cin_matrix_numeric}
 
--- OUTPUT MAT:
+-- FILTER MAT:
 {flt_matrix_numeric}
 
--- EXPECTED RESULT:
+-- EXPECTED RESULT DEC:
+{res_dec_matrix_numeric}
+
+-- EXPECTED RESULT HEX:
 {res_matrix_numeric}
