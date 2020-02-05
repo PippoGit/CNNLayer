@@ -4,10 +4,10 @@ use IEEE.std_logic_1164.all;
 library work;
 use work.cnn_types.all;
 
-entity cnnlayer_tb is
-end cnnlayer_tb;
+entity cnnlayer_tb_{id} is
+end cnnlayer_tb_{id};
 
-architecture bhv of cnnlayer_tb is
+  architecture bhv of cnnlayer_tb_{id} is
   constant T_CLK    : time := {clock_period};
   constant T_RESET  : time := {reset_time};
 
@@ -25,8 +25,8 @@ architecture bhv of cnnlayer_tb is
   signal reset_tb       : std_logic := '0'; 
   signal end_sim        : std_logic := '1';
 
-  signal Cin : cnn_matrix_t(0 to INPUT_WIDTH-1, 0 to INPUT_HEIGHT-1) := {cin_matrix};
-  signal flt : cnn_matrix_t(0 to FILTER_WIDTH-1, 0 to FILTER_HEIGHT-1) := {flt_matrix};
+  signal Cin : cnn_matrix_t(0 to INPUT_HEIGHT-1, 0 to INPUT_WIDTH-1) := {cin_matrix};
+  signal flt : cnn_matrix_t(0 to FILTER_HEIGHT-1, 0 to FILTER_WIDTH-1) := {flt_matrix};
 
   signal mem_data_out_s : std_logic_vector(CNN_OUTPUT_BIT-1 downto 0);
   signal mem_rd_en_s    : std_logic;
