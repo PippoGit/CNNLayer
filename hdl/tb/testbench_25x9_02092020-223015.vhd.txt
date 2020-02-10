@@ -4,29 +4,29 @@ use IEEE.std_logic_1164.all;
 library work;
 use work.cnn_types.all;
 
-entity cnnlayer_tb_{id} is
-end cnnlayer_tb_{id};
+entity cnnlayer_tb_815257 is
+end cnnlayer_tb_815257;
 
-  architecture bhv of cnnlayer_tb_{id} is
-  constant T_CLK    : time := {clock_period};
-  constant T_RESET  : time := {reset_time};
+  architecture bhv of cnnlayer_tb_815257 is
+  constant T_CLK    : time := 8 ns;
+  constant T_RESET  : time := 12 ns;
 
-  constant INPUT_WIDTH    : natural := {input_width};
-  constant INPUT_HEIGHT   : natural := {input_height};
+  constant INPUT_WIDTH    : natural := 5;
+  constant INPUT_HEIGHT   : natural := 5;
 
-  constant FILTER_WIDTH   : natural := {filter_width};
-  constant FILTER_HEIGHT  : natural := {filter_height};
+  constant FILTER_WIDTH   : natural := 3;
+  constant FILTER_HEIGHT  : natural := 3;
 
-  constant ADDRESS_LENGTH : natural :=  {address_length};
-  constant CNN_OUTPUT_BIT : natural :=  {cnn_output_bit};
+  constant ADDRESS_LENGTH : natural :=  4;
+  constant CNN_OUTPUT_BIT : natural :=  20;
 
   -- Testbench signals
   signal clk_tb         : std_logic := '0';
   signal reset_tb       : std_logic := '0'; 
   signal end_sim        : std_logic := '1';
 
-  signal Cin : cnn_matrix_t(0 to INPUT_HEIGHT-1, 0 to INPUT_WIDTH-1) := {cin_matrix};
-  signal flt : cnn_matrix_t(0 to FILTER_HEIGHT-1, 0 to FILTER_WIDTH-1) := {flt_matrix};
+  signal Cin : cnn_matrix_t(0 to INPUT_HEIGHT-1, 0 to INPUT_WIDTH-1) := (("00000111", "00000010", "00000011", "00000011", "00001000"), ("00000100", "00000101", "00000011", "00001000", "00000100"), ("00000011", "00000011", "00000010", "00001000", "00000100"), ("00000010", "00001000", "00000111", "00000010", "00000111"), ("00000101", "00000100", "00000101", "00000101", "00000100"));
+  signal flt : cnn_matrix_t(0 to FILTER_HEIGHT-1, 0 to FILTER_WIDTH-1) := (("00000001", "00000000", "11111111"), ("00000001", "00000000", "11111111"), ("00000001", "00000000", "11111111"));
 
   signal mem_data_out_s : std_logic_vector(CNN_OUTPUT_BIT-1 downto 0);
   signal mem_rd_en_s    : std_logic;
@@ -81,9 +81,17 @@ begin
     elsif(clk_tb='1' and clk_tb'event) then
       case(t) is
         -- testing read from memory
-        when {start_simulation_time} => mem_rd_en_s   <= '1'; mem_rd_addr_s <= (others => '0');
-{simulation_cases}
-        when {end_simulation_time} => end_sim <= '1'; mem_rd_en_s <= '0';
+        when 14 => mem_rd_en_s   <= '1'; mem_rd_addr_s <= (others => '0');
+        when 15 => mem_rd_addr_s <= "0001";
+        when 16 => mem_rd_addr_s <= "0010";
+        when 17 => mem_rd_addr_s <= "0011";
+        when 18 => mem_rd_addr_s <= "0100";
+        when 19 => mem_rd_addr_s <= "0101";
+        when 20 => mem_rd_addr_s <= "0110";
+        when 21 => mem_rd_addr_s <= "0111";
+        when 22 => mem_rd_addr_s <= "1000";
+
+        when 33 => end_sim <= '1'; mem_rd_en_s <= '0';
         when others => null;
       end case;
       t := t + 1;
@@ -92,13 +100,27 @@ begin
 end bhv;
 
 -- INPUT MAT:
-{cin_matrix_numeric}
+     7    2    3    3    8
+     4    5    3    8    4
+     3    3    2    8    4
+     2    8    7    2    7
+     5    4    5    5    4
+
 
 -- FILTER MAT:
-{flt_matrix_numeric}
+     1    0    -1
+     1    0    -1
+     1    0    -1
+
 
 -- EXPECTED RESULT DEC:
-{res_dec_matrix_numeric}
+     6    -9    -8
+     -3    -2    -3
+     -4    0    -1
+
 
 -- EXPECTED RESULT HEX:
-{res_matrix_numeric}
+--     0x6    -0x9    -0x8
+--     -0x3    -0x2    -0x3
+--     -0x4    0x0    -0x1
+
