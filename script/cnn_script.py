@@ -72,7 +72,7 @@ def zip_parameters(cin, flt, addr_len, output_bit, start_simulation_time, end_si
 def generate_testbench(cin, flt):
     mem_size       = (cin.shape[0] - flt.shape[0] + 1) * (cin.shape[1] - flt.shape[1] + 1)
     mem_address    = math.ceil(math.log(mem_size, 2))
-    cnn_output_bit = NUM_BIT_INTEGER*2 + math.ceil(math.log(flt.size, 2))
+    cnn_output_bit = math.ceil(math.log(flt.size*(2**(NUM_BIT_INTEGER*2 - 1)-1), 2))
 
     start_sim_time = mem_size + 5  # safe margin 5 should be enough
     end_sim_time   = start_sim_time + mem_size + 10 # safe margin 10 should be enough
