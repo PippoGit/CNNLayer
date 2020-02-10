@@ -133,7 +133,7 @@ begin
     
            -- write to memory
            mem_wr_addr_s <= std_logic_vector(to_unsigned(mem_index, AddressLength));
-           mem_data_s    <= std_logic_vector(to_unsigned(slice(cin_reg, index_r, index_c, FilterWidth, FilterHeight)*flt_reg, NumBitData));
+           mem_data_s    <= std_logic_vector(to_signed(slice(cin_reg, index_r, index_c, FilterWidth, FilterHeight)*flt_reg, NumBitData));
            mem_wr_en_s   <= '1';
     
            -- increment indices...

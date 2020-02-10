@@ -18,7 +18,7 @@ architecture bhv of cnnlayer_tb is
   constant FILTER_HEIGHT  : natural := 3;
 
   constant ADDRESS_LENGTH : natural :=  4; -- log(x, RAM_SIZE)
-  constant CNN_OUTPUT_BIT : natural := 19;  -- 16 + log(2, FW*FH)
+  constant CNN_OUTPUT_BIT : natural := 20;  -- 16 + log(2, FW*FH)
    
 
   -- Testbench signals
@@ -27,17 +27,17 @@ architecture bhv of cnnlayer_tb is
   signal end_sim        : std_logic := '1';
 
   signal Cin : cnn_matrix_t(0 to INPUT_WIDTH-1, 0 to INPUT_HEIGHT-1) := (
-    ("00000001", "00000001", "00000001", "00000000", "00000000"),
-    ("00000000", "00000001", "00000001", "00000001", "00000000"),
-    ("00000000", "00000000", "00000001", "00000001", "00000001"),
-    ("00000000", "00000000", "00000001", "00000001", "00000000"),
-    ("00000000", "00000001", "00000001", "00000000", "00000000")
+    ("01111111", "01111111", "01111111", "01111111", "01111111"),
+    ("01111111", "01111111", "01111111", "01111111", "01111111"),
+    ("01111111", "01111111", "01111111", "01111111", "01111111"),
+    ("01111111", "01111111", "01111111", "01111111", "01111111"),
+    ("01111111", "01111111", "01111111", "01111111", "01111111")
   );
 
   signal flt : cnn_matrix_t(0 to FILTER_WIDTH-1, 0 to FILTER_HEIGHT-1) := (
-     ("00000001", "00000000", "00000001"),
-     ("00000000", "00000001", "00000000"),
-     ("00000001", "00000000", "00000001") 
+     ("01111111", "01111111", "01111111"),
+     ("01111111", "01111111", "01111111"),
+     ("01111111", "01111111", "01111111") 
   );
 
   signal mem_data_out_s : std_logic_vector(CNN_OUTPUT_BIT-1 downto 0);
@@ -87,7 +87,7 @@ begin
     if(reset_tb = '0') then
       t := 0;
       mem_rd_en_s    <= '0';
-      mem_rd_addr_s  <= "ZZZZ";
+      mem_rd_addr_s  <= "0000";
     elsif(clk_tb='1' and clk_tb'event) then
       case(t) is
         -- testing read from memory (10 clock cycles are enough for 5x5 + 3x3)

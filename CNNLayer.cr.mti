@@ -1,4 +1,4 @@
-G:/CNNLAYER/testbench_200x6_02052020-111835.vhd {1 {vcom -work work -2002 -explicit -stats=none {G:\CNNLAYER\testbench_200x6_02052020-111835.vhd}
+C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/tb/sqcin_rectflt1_02102020-202828.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/tb/sqcin_rectflt1_02102020-202828.vhd
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -7,10 +7,10 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Loading package STD_LOGIC_UNSIGNED
 -- Loading package NUMERIC_STD
 -- Loading package cnn_types
--- Compiling entity cnnlayer_tb
--- Compiling architecture bhv of cnnlayer_tb
+-- Compiling entity cnnlayer_tb_908723
+-- Compiling architecture bhv of cnnlayer_tb_908723
 
-} {} {}} G:/CNNLAYER/testbench_25x9_02052020-111835.vhd {1 {vcom -work work -2002 -explicit -stats=none {G:\CNNLAYER\testbench_25x9_02052020-111835.vhd}
+} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/tb/sqcin_rectflt2_02102020-202859.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/tb/sqcin_rectflt2_02102020-202859.vhd
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -19,10 +19,10 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Loading package STD_LOGIC_UNSIGNED
 -- Loading package NUMERIC_STD
 -- Loading package cnn_types
--- Compiling entity cnnlayer_tb
--- Compiling architecture bhv of cnnlayer_tb
+-- Compiling entity cnnlayer_tb_939286
+-- Compiling architecture bhv of cnnlayer_tb_939286
 
-} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/tb/CNNLayer_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\tb\CNNLayer_tb.vhd}
+} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/tb/rect_cin2_square_flt_32x9_02102020-202927.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/tb/rect_cin2_square_flt_32x9_02102020-202927.vhd
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -31,8 +31,44 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Loading package STD_LOGIC_UNSIGNED
 -- Loading package NUMERIC_STD
 -- Loading package cnn_types
--- Compiling entity cnnlayer_tb
--- Compiling architecture bhv of cnnlayer_tb
+-- Compiling entity cnnlayer_tb_967236
+-- Compiling architecture bhv of cnnlayer_tb_967236
+
+} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/tb/rect_cin1_square_flt_tb_02102020-202735.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/tb/rect_cin1_square_flt_tb_02102020-202735.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package cnn_types
+-- Compiling entity cnnlayer_tb_855754
+-- Compiling architecture bhv of cnnlayer_tb_855754
+
+} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/tb/testbench_25x9_02092020-223618.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\tb\testbench_25x9_02092020-223618.vhd}
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package cnn_types
+-- Compiling entity cnnlayer_tb_178298
+-- Compiling architecture bhv of cnnlayer_tb_178298
+
+} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/tb/both_rect.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/tb/both_rect.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package cnn_types
+-- Compiling entity cnnlayer_tb_002586
+-- Compiling architecture bhv of cnnlayer_tb_002586
 
 } {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNLayer.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNLayer.vhd}
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
@@ -46,7 +82,19 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Compiling entity CNNLayer
 -- Compiling architecture CNNLayer_Arch of CNNLayer
 
-} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNTypes.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNTypes.vhd}
+} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package cnn_types
+-- Compiling entity CNNRegister
+-- Compiling architecture CNNRegister_Arch of CNNRegister
+
+} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNTypes.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNTypes.vhd
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -58,7 +106,7 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Compiling package body cnn_types
 -- Loading package cnn_types
 
-} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNMemory.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Filippo\Desktop\Electronics\CNNLayer\hdl\src\CNNMemory.vhd}
+} {} {}} C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNMemory.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNMemory.vhd
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO

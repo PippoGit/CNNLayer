@@ -1,0 +1,178 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+library work;
+use work.cnn_types.all;
+
+entity cnnlayer_tb_908723 is
+end cnnlayer_tb_908723;
+
+  architecture bhv of cnnlayer_tb_908723 is
+  constant T_CLK    : time := 8 ns;
+  constant T_RESET  : time := 12 ns;
+
+  constant INPUT_WIDTH    : natural := 10;
+  constant INPUT_HEIGHT   : natural := 10;
+
+  constant FILTER_WIDTH   : natural := 3;
+  constant FILTER_HEIGHT  : natural := 5;
+
+  constant ADDRESS_LENGTH : natural :=  6;
+  constant CNN_OUTPUT_BIT : natural :=  20;
+
+  -- Testbench signals
+  signal clk_tb         : std_logic := '0';
+  signal reset_tb       : std_logic := '0'; 
+  signal end_sim        : std_logic := '1';
+
+  signal Cin : cnn_matrix_t(0 to INPUT_HEIGHT-1, 0 to INPUT_WIDTH-1) := (("00101100", "01011101", "01110001", "01100011", "00001011", "01010000", "01101101", "01111011", "00011110", "00111011"), ("01110010", "01101010", "01011011", "00110111", "00111110", "01110111", "01110110", "00011101", "01100111", "00111010"), ("00011010", "00101111", "01010011", "01101000", "00110100", "01110111", "01000110", "00000010", "01110110", "01000110"), ("00111011", "00110000", "01001101", "01111101", "01010110", "00100100", "00101010", "01100001", "01110000", "01110010"), ("00101011", "01101001", "00011100", "00101001", "00110100", "00011101", "00011100", "00100101", "01011110", "01101011"), ("01010111", "01010001", "01000010", "01100000", "01001111", "00010101", "01011111", "00111100", "01101111", "00110000"), ("01010111", "01011100", "01101101", "01000010", "01000111", "00101101", "00101011", "01111011", "01011111", "00110101"), ("01111101", "00110111", "00100100", "01111101", "01001001", "01100001", "01111100", "00100011", "01001001", "01100001"), ("00010110", "00000001", "00101010", "01011110", "00100000", "00000000", "01111001", "01111101", "01101010", "00001101"), ("01001011", "01011000", "00000100", "00011010", "01010000", "00110000", "01001111", "00101001", "01010111", "00010010"));
+  signal flt : cnn_matrix_t(0 to FILTER_HEIGHT-1, 0 to FILTER_WIDTH-1) := (("01010101", "01100110", "01000101"), ("00010111", "00001110", "01010101"), ("00000011", "01001110", "01010010"), ("00001010", "01110111", "01011010"), ("01100101", "01100000", "01001001"));
+
+  signal mem_data_out_s : std_logic_vector(CNN_OUTPUT_BIT-1 downto 0);
+  signal mem_rd_en_s    : std_logic;
+  signal mem_rd_addr_s  : std_logic_vector(ADDRESS_LENGTH-1 downto 0);
+
+  
+  component CNNLayer is
+    generic(InputWidth:natural; InputHeight:natural; FilterWidth:natural; FilterHeight:natural;
+            AddressLength: natural; NumBitData:natural);
+    port(
+      -- Clock and reset 
+      clk   : in std_logic;
+      reset : in std_logic;
+      Cin   : in cnn_matrix_t(0 to InputWidth-1,  0 to InputHeight-1);
+      flt   : in cnn_matrix_t(0 to FilterWidth-1, 0 to FilterHeight-1);
+
+      -- Memory 
+      mem_rd_en    : in std_logic;
+      mem_rd_addr  : in std_logic_vector(AddressLength-1 downto 0);
+      mem_data_out : out std_logic_vector(NumBitData-1 downto 0)
+    );
+  end component;
+
+begin
+  clk_tb <= (not(clk_tb) and end_sim) after T_CLK / 2;
+  reset_tb <= '1' after T_RESET;
+
+  test_CNN: CNNLayer
+  generic map (
+    InputWidth => INPUT_WIDTH, InputHeight => INPUT_HEIGHT, 
+    FilterWidth => FILTER_WIDTH, FilterHeight => FILTER_HEIGHT,
+    AddressLength => ADDRESS_LENGTH, NumBitData => CNN_OUTPUT_BIT
+  )
+  port map(
+    clk   => clk_tb,      
+    reset => reset_tb,
+    Cin   => Cin,
+    flt   => flt,
+ 
+    mem_data_out  => mem_data_out_s,
+    mem_rd_en     => mem_rd_en_s,
+    mem_rd_addr   => mem_rd_addr_s
+  );
+		
+  cnnlayer_process: process(clk_tb, reset_tb)
+    variable t : integer := 0;
+  begin
+    if(reset_tb = '0') then
+      t := 0;
+      mem_rd_en_s    <= '0';
+      mem_rd_addr_s  <= (others => '0');
+    elsif(clk_tb='1' and clk_tb'event) then
+      case(t) is
+        -- testing read from memory
+        when 53 => mem_rd_en_s   <= '1'; mem_rd_addr_s <= (others => '0');
+        when 54 => mem_rd_addr_s <= "000001";
+        when 55 => mem_rd_addr_s <= "000010";
+        when 56 => mem_rd_addr_s <= "000011";
+        when 57 => mem_rd_addr_s <= "000100";
+        when 58 => mem_rd_addr_s <= "000101";
+        when 59 => mem_rd_addr_s <= "000110";
+        when 60 => mem_rd_addr_s <= "000111";
+        when 61 => mem_rd_addr_s <= "001000";
+        when 62 => mem_rd_addr_s <= "001001";
+        when 63 => mem_rd_addr_s <= "001010";
+        when 64 => mem_rd_addr_s <= "001011";
+        when 65 => mem_rd_addr_s <= "001100";
+        when 66 => mem_rd_addr_s <= "001101";
+        when 67 => mem_rd_addr_s <= "001110";
+        when 68 => mem_rd_addr_s <= "001111";
+        when 69 => mem_rd_addr_s <= "010000";
+        when 70 => mem_rd_addr_s <= "010001";
+        when 71 => mem_rd_addr_s <= "010010";
+        when 72 => mem_rd_addr_s <= "010011";
+        when 73 => mem_rd_addr_s <= "010100";
+        when 74 => mem_rd_addr_s <= "010101";
+        when 75 => mem_rd_addr_s <= "010110";
+        when 76 => mem_rd_addr_s <= "010111";
+        when 77 => mem_rd_addr_s <= "011000";
+        when 78 => mem_rd_addr_s <= "011001";
+        when 79 => mem_rd_addr_s <= "011010";
+        when 80 => mem_rd_addr_s <= "011011";
+        when 81 => mem_rd_addr_s <= "011100";
+        when 82 => mem_rd_addr_s <= "011101";
+        when 83 => mem_rd_addr_s <= "011110";
+        when 84 => mem_rd_addr_s <= "011111";
+        when 85 => mem_rd_addr_s <= "100000";
+        when 86 => mem_rd_addr_s <= "100001";
+        when 87 => mem_rd_addr_s <= "100010";
+        when 88 => mem_rd_addr_s <= "100011";
+        when 89 => mem_rd_addr_s <= "100100";
+        when 90 => mem_rd_addr_s <= "100101";
+        when 91 => mem_rd_addr_s <= "100110";
+        when 92 => mem_rd_addr_s <= "100111";
+        when 93 => mem_rd_addr_s <= "101000";
+        when 94 => mem_rd_addr_s <= "101001";
+        when 95 => mem_rd_addr_s <= "101010";
+        when 96 => mem_rd_addr_s <= "101011";
+        when 97 => mem_rd_addr_s <= "101100";
+        when 98 => mem_rd_addr_s <= "101101";
+        when 99 => mem_rd_addr_s <= "101110";
+        when 100 => mem_rd_addr_s <= "101111";
+
+        when 111 => end_sim <= '1'; mem_rd_en_s <= '0';
+        when others => null;
+      end case;
+      t := t + 1;
+    end if;
+  end process;
+end bhv;
+
+-- INPUT MAT:
+--     44    93    113    99    11    80    109    123    30    59
+--     114    106    91    55    62    119    118    29    103    58
+--     26    47    83    104    52    119    70    2    118    70
+--     59    48    77    125    86    36    42    97    112    114
+--     43    105    28    41    52    29    28    37    94    107
+--     87    81    66    96    79    21    95    60    111    48
+--     87    92    109    66    71    45    43    123    95    53
+--     125    55    36    125    73    97    124    35    73    97
+--     22    1    42    94    32    0    121    125    106    13
+--     75    88    4    26    80    48    79    41    87    18
+
+
+-- FILTER MAT:
+--     85    102    69
+--     23    14    85
+--     3    78    82
+--     10    119    90
+--     101    96    73
+
+
+-- EXPECTED RESULT DEC:
+--     73113    86971    75165    67405    63920    61646    81083    84705
+--     82153    79167    73929    70501    64293    61950    85240    84402
+--     73945    80183    81350    65069    58623    66926    77984    90283
+--     74215    78081    81330    74062    63199    71527    89241    86500
+--     57836    66826    68431    56548    62243    67979    86547    80772
+--     60816    67354    69389    56585    68948    81614    85619    70992
+
+
+-- EXPECTED RESULT HEX:
+--     0x11d99    0x153bb    0x1259d    0x1074d    0xf9b0    0xf0ce    0x13cbb    0x14ae1
+--     0x140e9    0x1353f    0x120c9    0x11365    0xfb25    0xf1fe    0x14cf8    0x149b2
+--     0x120d9    0x13937    0x13dc6    0xfe2d    0xe4ff    0x1056e    0x130a0    0x160ab
+--     0x121e7    0x13101    0x13db2    0x1214e    0xf6df    0x11767    0x15c99    0x151e4
+--     0xe1ec    0x1050a    0x10b4f    0xdce4    0xf323    0x1098b    0x15213    0x13b84
+--     0xed90    0x1071a    0x10f0d    0xdd09    0x10d54    0x13ece    0x14e73    0x11550
+
