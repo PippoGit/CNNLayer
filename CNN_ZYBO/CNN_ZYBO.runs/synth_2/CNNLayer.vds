@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Mon Feb  3 21:41:03 2020
-# Process ID: 468
+# Start of session at: Wed Feb 12 20:47:33 2020
+# Process ID: 4496
 # Current directory: C:/Users/Filippo/Desktop/Electronics/CNNLayer/CNN_ZYBO/CNN_ZYBO.runs/synth_2
 # Command line: vivado.exe -log CNNLayer.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source CNNLayer.tcl
 # Log file: C:/Users/Filippo/Desktop/Electronics/CNNLayer/CNN_ZYBO/CNN_ZYBO.runs/synth_2/CNNLayer.vds
@@ -15,40 +15,43 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z014s'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z014s'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 7732 
+INFO: Helper process launched with PID 4284 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 430.438 ; gain = 96.977
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 431.227 ; gain = 98.645
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'CNNLayer' [C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNLayer.vhd:26]
-	Parameter InputWidth bound to: 5 - type: integer 
-	Parameter InputHeight bound to: 5 - type: integer 
-	Parameter FilterWidth bound to: 3 - type: integer 
-	Parameter FilterHeight bound to: 3 - type: integer 
-	Parameter AddressLength bound to: 4 - type: integer 
-	Parameter CNNWidth bound to: 5 - type: integer 
-	Parameter CNNHeight bound to: 5 - type: integer 
+	Parameter InputWidth bound to: 50 - type: integer 
+	Parameter InputHeight bound to: 50 - type: integer 
+	Parameter FilterWidth bound to: 5 - type: integer 
+	Parameter FilterHeight bound to: 5 - type: integer 
+	Parameter AddressLength bound to: 12 - type: integer 
+	Parameter NumBitData bound to: 20 - type: integer 
+	Parameter CNNWidth bound to: 50 - type: integer 
+	Parameter CNNHeight bound to: 50 - type: integer 
 INFO: [Synth 8-3491] module 'CNNRegister' declared at 'C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd:8' bound to instance 'CinRegister' of component 'CNNRegister' [C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNLayer.vhd:76]
 INFO: [Synth 8-638] synthesizing module 'CNNRegister' [C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd:22]
+	Parameter CNNWidth bound to: 50 - type: integer 
+	Parameter CNNHeight bound to: 50 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'CNNRegister' (1#1) [C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd:22]
 	Parameter CNNWidth bound to: 5 - type: integer 
 	Parameter CNNHeight bound to: 5 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'CNNRegister' (1#1) [C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd:22]
-	Parameter CNNWidth bound to: 3 - type: integer 
-	Parameter CNNHeight bound to: 3 - type: integer 
 INFO: [Synth 8-3491] module 'CNNRegister' declared at 'C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd:8' bound to instance 'FltRegister' of component 'CNNRegister' [C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNLayer.vhd:86]
 INFO: [Synth 8-638] synthesizing module 'CNNRegister__parameterized1' [C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd:22]
-	Parameter CNNWidth bound to: 3 - type: integer 
-	Parameter CNNHeight bound to: 3 - type: integer 
+	Parameter CNNWidth bound to: 5 - type: integer 
+	Parameter CNNHeight bound to: 5 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'CNNRegister__parameterized1' (1#1) [C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd:22]
-	Parameter MemorySize bound to: 9 - type: integer 
-	Parameter AddressLength bound to: 4 - type: integer 
+	Parameter MemorySize bound to: 2116 - type: integer 
+	Parameter AddressLength bound to: 12 - type: integer 
+	Parameter NumBitData bound to: 20 - type: integer 
 INFO: [Synth 8-3491] module 'CNNMemory' declared at 'C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNMemory.vhd:9' bound to instance 'RAM' of component 'CNNMemory' [C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNLayer.vhd:96]
 INFO: [Synth 8-638] synthesizing module 'CNNMemory' [C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNMemory.vhd:27]
-	Parameter MemorySize bound to: 9 - type: integer 
-	Parameter AddressLength bound to: 4 - type: integer 
+	Parameter MemorySize bound to: 2116 - type: integer 
+	Parameter AddressLength bound to: 12 - type: integer 
+	Parameter NumBitData bound to: 20 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'CNNMemory' (2#1) [C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNMemory.vhd:27]
 INFO: [Synth 8-256] done synthesizing module 'CNNLayer' (3#1) [C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNLayer.vhd:26]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 486.941 ; gain = 153.480
+Finished RTL Elaboration : Time (s): cpu = 00:01:02 ; elapsed = 00:01:05 . Memory (MB): peak = 766.801 ; gain = 434.219
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -61,75 +64,182 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 486.941 ; gain = 153.480
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:09 ; elapsed = 00:01:13 . Memory (MB): peak = 766.801 ; gain = 434.219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 486.941 ; gain = 153.480
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:09 ; elapsed = 00:01:13 . Memory (MB): peak = 766.801 ; gain = 434.219
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z014sclg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/Filippo/Desktop/Electronics/CNNLayer/CNN_ZYBO/CNN_ZYBO.srcs/constrs_1/new/cnn_zybo_constraint.xdc]
-Finished Parsing XDC File [C:/Users/Filippo/Desktop/Electronics/CNNLayer/CNN_ZYBO/CNN_ZYBO.srcs/constrs_1/new/cnn_zybo_constraint.xdc]
+Parsing XDC File [C:/Users/Filippo/Desktop/Electronics/CNNLayer/CNN_ZYBO/CNN_ZYBO.srcs/constrs_1/new/constraints.xdc]
+Finished Parsing XDC File [C:/Users/Filippo/Desktop/Electronics/CNNLayer/CNN_ZYBO/CNN_ZYBO.srcs/constrs_1/new/constraints.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 852.277 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1308.559 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 852.277 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.110 . Memory (MB): peak = 853.652 ; gain = 1.375
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1328.605 ; gain = 0.477
+Constraint Validation Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1331.824 ; gain = 23.266
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:38 . Memory (MB): peak = 853.652 ; gain = 520.191
+Finished Constraint Validation : Time (s): cpu = 00:02:19 ; elapsed = 00:02:25 . Memory (MB): peak = 1331.824 ; gain = 999.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z014sclg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:38 . Memory (MB): peak = 853.652 ; gain = 520.191
+Finished Loading Part and Timing Information : Time (s): cpu = 00:02:19 ; elapsed = 00:02:26 . Memory (MB): peak = 1331.824 ; gain = 999.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:38 . Memory (MB): peak = 853.652 ; gain = 520.191
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:02:19 ; elapsed = 00:02:26 . Memory (MB): peak = 1331.824 ; gain = 999.242
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5544] ROM "RAM_reg[0]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "RAM_reg[1]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "RAM_reg[2]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "RAM_reg[3]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "RAM_reg[4]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "RAM_reg[5]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "RAM_reg[6]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "RAM_reg[7]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "RAM_reg[8]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "RAM_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[31]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[32]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[33]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[34]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[35]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[36]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[37]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[38]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[39]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[40]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[41]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[42]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[43]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[44]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[45]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[46]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[47]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[48]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[49]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[50]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[51]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[52]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[53]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[54]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[55]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[56]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[57]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[58]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[59]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[60]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[61]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[62]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[63]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[64]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[65]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[66]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[67]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[68]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[69]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[70]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[71]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[72]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[73]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[74]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[75]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[76]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[77]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[78]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[79]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[80]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[81]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[82]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[83]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[84]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[85]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[86]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[87]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[88]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[89]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[90]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[91]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[92]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[93]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[94]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[95]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[96]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[97]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[98]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "RAM_reg[99]" won't be mapped to RAM because it is too sparse
+INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:31 ; elapsed = 00:00:39 . Memory (MB): peak = 853.652 ; gain = 520.191
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:04:00 ; elapsed = 00:04:25 . Memory (MB): peak = 1331.824 ; gain = 999.242
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+------------------------+------------+----------+
+|      |RTL Partition           |Replication |Instances |
++------+------------------------+------------+----------+
+|1     |CNNRegister__GB0        |           1|     20002|
+|2     |CNNRegister__GB1        |           1|     20000|
+|3     |muxpart__2116_CNNMemory |           1|     42301|
+|4     |logic_CNNMemory__GD     |           1|        11|
+|5     |CNNMemory__GB2          |           1|      8279|
+|6     |CNNMemory__GB3          |           1|     13247|
+|7     |CNNMemory__GB4          |           1|     32440|
+|8     |CNNMemory__GB5          |           1|     27504|
+|9     |CNNMemory__GB6          |           1|     38395|
+|10    |CNNLayer__GCB0          |           1|     26589|
+|11    |CNNLayer__GCB1          |           1|     11796|
+|12    |CNNLayer__GCB2          |           1|     11796|
+|13    |CNNLayer__GCB3          |           1|     17694|
+|14    |CNNLayer__GCB4          |           1|     17694|
+|15    |CNNLayer__GCB5          |           1|     23592|
++------+------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     31 Bit       Adders := 3     
-	   2 Input      4 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 1     
 +---Registers : 
 	               31 Bit    Registers := 2     
-	               17 Bit    Registers := 11    
-	                8 Bit    Registers := 34    
-	                4 Bit    Registers := 1     
+	               20 Bit    Registers := 2118  
+	               12 Bit    Registers := 1     
+	                8 Bit    Registers := 2525  
 	                1 Bit    Registers := 3     
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 2116  
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -141,28 +251,28 @@ Module CNNLayer
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     31 Bit       Adders := 3     
-	   2 Input      4 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 1     
 +---Registers : 
 	               31 Bit    Registers := 2     
-	               17 Bit    Registers := 1     
-	                4 Bit    Registers := 1     
+	               20 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 Module CNNRegister 
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 25    
-	                1 Bit    Registers := 1     
-Module CNNRegister__parameterized1 
-Detailed RTL Component Info : 
-+---Registers : 
-	                8 Bit    Registers := 9     
+	                8 Bit    Registers := 2500  
 	                1 Bit    Registers := 1     
 Module CNNMemory 
 Detailed RTL Component Info : 
 +---Registers : 
-	               17 Bit    Registers := 10    
+	               20 Bit    Registers := 2117  
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 2116  
+Module CNNRegister__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 25    
+	                1 Bit    Registers := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -175,19 +285,12 @@ BRAMs: 214 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-4471] merging register 'FltRegister/stbl_reg' into 'CinRegister/stbl_reg' [C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd:28]
-INFO: [Synth 8-3886] merging instance 'mem_index_reg[4]' (FDCE) to 'mem_index_reg[5]'
-INFO: [Synth 8-3886] merging instance 'mem_index_reg[5]' (FDCE) to 'mem_index_reg[6]'
-INFO: [Synth 8-3886] merging instance 'mem_index_reg[6]' (FDCE) to 'mem_index_reg[7]'
-INFO: [Synth 8-3886] merging instance 'mem_index_reg[7]' (FDCE) to 'mem_index_reg[8]'
-INFO: [Synth 8-3886] merging instance 'mem_index_reg[8]' (FDCE) to 'mem_index_reg[9]'
-INFO: [Synth 8-3886] merging instance 'mem_index_reg[9]' (FDCE) to 'mem_index_reg[10]'
-INFO: [Synth 8-3886] merging instance 'mem_index_reg[10]' (FDCE) to 'mem_index_reg[11]'
-INFO: [Synth 8-3886] merging instance 'mem_index_reg[11]' (FDCE) to 'mem_index_reg[12]'
+INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3886] merging instance 'mem_index_reg[12]' (FDCE) to 'mem_index_reg[13]'
 INFO: [Synth 8-3886] merging instance 'mem_index_reg[13]' (FDCE) to 'mem_index_reg[14]'
 INFO: [Synth 8-3886] merging instance 'mem_index_reg[14]' (FDCE) to 'mem_index_reg[15]'
@@ -208,44 +311,89 @@ INFO: [Synth 8-3886] merging instance 'mem_index_reg[28]' (FDCE) to 'mem_index_r
 INFO: [Synth 8-3886] merging instance 'mem_index_reg[29]' (FDCE) to 'mem_index_reg[30]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_index_reg[30] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:00:56 . Memory (MB): peak = 853.652 ; gain = 520.191
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:07:05 ; elapsed = 00:10:08 . Memory (MB): peak = 1331.824 ; gain = 999.242
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+------------------------+------------+----------+
+|      |RTL Partition           |Replication |Instances |
++------+------------------------+------------+----------+
+|1     |CNNRegister__GB0        |           1|     10002|
+|2     |CNNRegister__GB1        |           1|     10001|
+|3     |muxpart__2116_CNNMemory |           1|     42301|
+|4     |logic_CNNMemory__GD     |           1|        11|
+|5     |CNNMemory__GB2          |           1|      4160|
+|6     |CNNMemory__GB3          |           1|      6062|
+|7     |CNNMemory__GB4          |           1|     16221|
+|8     |CNNMemory__GB5          |           1|      9801|
+|9     |CNNMemory__GB6          |           1|     11951|
+|10    |CNNLayer__GCB0          |           1|     25235|
+|11    |CNNLayer__GCB1          |           1|      7686|
+|12    |CNNLayer__GCB2          |           1|      7686|
+|13    |CNNLayer__GCB3          |           1|     11526|
+|14    |CNNLayer__GCB4          |           1|     11526|
+|15    |CNNLayer__GCB5          |           1|     15366|
++------+------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:08 ; elapsed = 00:01:18 . Memory (MB): peak = 853.652 ; gain = 520.191
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:07:38 ; elapsed = 00:10:46 . Memory (MB): peak = 1331.824 ; gain = 999.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:24 ; elapsed = 00:01:34 . Memory (MB): peak = 1013.598 ; gain = 680.137
+Finished Timing Optimization : Time (s): cpu = 00:29:16 ; elapsed = 00:33:37 . Memory (MB): peak = 4231.125 ; gain = 3898.543
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+----------------------------+------------+----------+
+|      |RTL Partition               |Replication |Instances |
++------+----------------------------+------------+----------+
+|1     |CNNRegister__GB0            |           1|     10002|
+|2     |CNNRegister__GB1            |           1|     10001|
+|3     |muxpart__2116_CNNMemory     |           1|     42301|
+|4     |logic_CNNMemory__GD         |           1|        11|
+|5     |CNNMemory__GB2              |           1|      4160|
+|6     |CNNMemory__GB3              |           1|      6062|
+|7     |CNNMemory__GB4              |           1|     16221|
+|8     |CNNMemory__GB5              |           1|      9801|
+|9     |CNNMemory__GB6              |           1|     11951|
+|10    |CNNLayer__GCB2              |           1|      7686|
+|11    |CNNLayer__GCB3              |           1|     11526|
+|12    |CNNLayer__GCB4              |           1|     11526|
+|13    |CNNLayer_GT0                |           1|        75|
+|14    |CNNLayer_GT1                |           1|     48010|
+|15    |CNNRegister__parameterized1 |           1|       202|
++------+----------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:26 ; elapsed = 00:01:36 . Memory (MB): peak = 1013.598 ; gain = 680.137
+Finished Technology Mapping : Time (s): cpu = 00:41:55 ; elapsed = 00:51:51 . Memory (MB): peak = 4231.125 ; gain = 3898.543
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+----------------------------+------------+----------+
+|      |RTL Partition               |Replication |Instances |
++------+----------------------------+------------+----------+
+|1     |CNNRegister__GB0            |           1|     10002|
+|2     |CNNRegister__GB1            |           1|     10001|
+|3     |muxpart__2116_CNNMemory     |           1|     19741|
+|4     |logic_CNNMemory__GD         |           1|         2|
+|5     |CNNMemory__GB2              |           1|      4160|
+|6     |CNNMemory__GB3              |           1|      5936|
+|7     |CNNMemory__GB4              |           1|     16221|
+|8     |CNNMemory__GB5              |           1|      9583|
+|9     |CNNMemory__GB6              |           1|      9185|
+|10    |CNNLayer__GCB2              |           1|      4131|
+|11    |CNNLayer__GCB3              |           1|      6195|
+|12    |CNNLayer__GCB4              |           1|      6195|
+|13    |CNNLayer_GT0                |           1|        75|
+|14    |CNNLayer_GT1                |           1|     25407|
+|15    |CNNRegister__parameterized1 |           1|       202|
++------+----------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -262,7 +410,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:29 ; elapsed = 00:01:39 . Memory (MB): peak = 1013.598 ; gain = 680.137
+Finished IO Insertion : Time (s): cpu = 00:43:07 ; elapsed = 00:53:09 . Memory (MB): peak = 4231.125 ; gain = 3898.543
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -275,7 +423,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:29 ; elapsed = 00:01:39 . Memory (MB): peak = 1013.598 ; gain = 680.137
+Finished Renaming Generated Instances : Time (s): cpu = 00:43:10 ; elapsed = 00:53:11 . Memory (MB): peak = 4231.125 ; gain = 3898.543
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -287,25 +435,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:30 ; elapsed = 00:01:40 . Memory (MB): peak = 1013.598 ; gain = 680.137
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:43:45 ; elapsed = 00:53:48 . Memory (MB): peak = 4231.125 ; gain = 3898.543
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:30 ; elapsed = 00:01:40 . Memory (MB): peak = 1013.598 ; gain = 680.137
+Finished Renaming Generated Ports : Time (s): cpu = 00:43:46 ; elapsed = 00:53:49 . Memory (MB): peak = 4231.125 ; gain = 3898.543
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:30 ; elapsed = 00:01:40 . Memory (MB): peak = 1013.598 ; gain = 680.137
+Finished Handling Custom Attributes : Time (s): cpu = 00:44:49 ; elapsed = 00:54:52 . Memory (MB): peak = 4231.125 ; gain = 3898.543
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:30 ; elapsed = 00:01:40 . Memory (MB): peak = 1013.598 ; gain = 680.137
+Finished Renaming Generated Nets : Time (s): cpu = 00:44:50 ; elapsed = 00:54:53 . Memory (MB): peak = 4231.125 ; gain = 3898.543
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -321,48 +469,51 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |CARRY4 |   175|
-|2     |LUT1   |    16|
-|3     |LUT2   |   340|
-|4     |LUT3   |   254|
-|5     |LUT4   |   423|
-|6     |LUT5   |    90|
-|7     |LUT6   |   452|
-|8     |FDCE   |   482|
-|9     |FDRE   |    21|
+|1     |CARRY4 |   468|
+|2     |LUT1   |    28|
+|3     |LUT2   |   972|
+|4     |LUT3   |  2779|
+|5     |LUT4   |  1150|
+|6     |LUT5   |   333|
+|7     |LUT6   | 40963|
+|8     |MUXF7  | 13798|
+|9     |MUXF8  |  4096|
+|10    |FDCE   | 62592|
+|11    |FDRE   |   748|
 +------+-------+------+
 
 Report Instance Areas: 
-+------+--------------+----------------------------+------+
-|      |Instance      |Module                      |Cells |
-+------+--------------+----------------------------+------+
-|1     |top           |                            |  2253|
-|2     |  CinRegister |CNNRegister                 |  1169|
-|3     |  FltRegister |CNNRegister__parameterized1 |   319|
-|4     |  RAM         |CNNMemory                   |   233|
-+------+--------------+----------------------------+------+
++------+--------------+----------------------------+-------+
+|      |Instance      |Module                      |Cells  |
++------+--------------+----------------------------+-------+
+|1     |top           |                            | 127927|
+|2     |  CinRegister |CNNRegister                 |  59684|
+|3     |  FltRegister |CNNRegister__parameterized1 |   1203|
+|4     |  RAM         |CNNMemory                   |  64820|
++------+--------------+----------------------------+-------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:30 ; elapsed = 00:01:40 . Memory (MB): peak = 1013.598 ; gain = 680.137
+Finished Writing Synthesis Report : Time (s): cpu = 00:44:50 ; elapsed = 00:54:53 . Memory (MB): peak = 4231.125 ; gain = 3898.543
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:07 ; elapsed = 00:01:22 . Memory (MB): peak = 1013.598 ; gain = 313.426
-Synthesis Optimization Complete : Time (s): cpu = 00:01:30 ; elapsed = 00:01:40 . Memory (MB): peak = 1013.598 ; gain = 680.137
+Synthesis Optimization Runtime : Time (s): cpu = 00:42:43 ; elapsed = 00:54:08 . Memory (MB): peak = 4231.125 ; gain = 3333.520
+Synthesis Optimization Complete : Time (s): cpu = 00:44:51 ; elapsed = 00:55:08 . Memory (MB): peak = 4231.125 ; gain = 3898.543
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 175 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-17] Analyzing 18362 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1013.598 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.093 . Memory (MB): peak = 4231.125 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-59 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+145 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:35 ; elapsed = 00:01:47 . Memory (MB): peak = 1013.598 ; gain = 692.391
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1013.598 ; gain = 0.000
+synth_design: Time (s): cpu = 00:45:55 ; elapsed = 00:56:17 . Memory (MB): peak = 4231.125 ; gain = 3910.980
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.092 . Memory (MB): peak = 4231.125 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Filippo/Desktop/Electronics/CNNLayer/CNN_ZYBO/CNN_ZYBO.runs/synth_2/CNNLayer.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:42 ; elapsed = 00:00:34 . Memory (MB): peak = 4231.125 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file CNNLayer_utilization_synth.rpt -pb CNNLayer_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Feb  3 21:43:08 2020...
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 12 21:44:36 2020...

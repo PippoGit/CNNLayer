@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_2" LaunchPart="xc7z014sclg400-1" LaunchTime="1580762456">
+<GenRun Id="synth_2" LaunchPart="xc7z014sclg400-1" LaunchTime="1581536847">
   <File Type="PA-TCL" Name="CNNLayer.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="CNNLayer_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="CNNLayer_reports.tcl"/>
@@ -13,24 +13,28 @@
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../hdl/src/CNNTypes.vhd">
       <FileInfo>
+        <Attr Name="Library" Val="work"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../hdl/src/CNNMemory.vhd">
       <FileInfo>
+        <Attr Name="Library" Val="work"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../hdl/src/CNNRegister.vhd">
       <FileInfo>
+        <Attr Name="Library" Val="work"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../hdl/src/CNNLayer.vhd">
       <FileInfo>
+        <Attr Name="Library" Val="work"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -43,14 +47,13 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PSRCDIR/constrs_1/new/cnn_zybo_constraint.xdc">
+    <File Path="$PSRCDIR/constrs_1/new/constraints.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
     <Config>
-      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/cnn_zybo_constraint.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Mon Feb  3 21:43:08 2020
+| Date         : Wed Feb 12 21:44:35 2020
 | Host         : Bootcamp running 64-bit major release  (build 9200)
 | Command      : report_utilization -file CNNLayer_utilization_synth.rpt -pb CNNLayer_utilization_synth.pb
 | Design       : CNNLayer
@@ -27,18 +27,18 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+-------------------------+------+-------+-----------+-------+
-|        Site Type        | Used | Fixed | Available | Util% |
-+-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 1204 |     0 |     40600 |  2.97 |
-|   LUT as Logic          | 1204 |     0 |     40600 |  2.97 |
-|   LUT as Memory         |    0 |     0 |     17400 |  0.00 |
-| Slice Registers         |  503 |     0 |     81200 |  0.62 |
-|   Register as Flip Flop |  503 |     0 |     81200 |  0.62 |
-|   Register as Latch     |    0 |     0 |     81200 |  0.00 |
-| F7 Muxes                |    0 |     0 |     26600 |  0.00 |
-| F8 Muxes                |    0 |     0 |     13300 |  0.00 |
-+-------------------------+------+-------+-----------+-------+
++-------------------------+-------+-------+-----------+--------+
+|        Site Type        |  Used | Fixed | Available |  Util% |
++-------------------------+-------+-------+-----------+--------+
+| Slice LUTs*             | 44228 |     0 |     40600 | 108.94 |
+|   LUT as Logic          | 44228 |     0 |     40600 | 108.94 |
+|   LUT as Memory         |     0 |     0 |     17400 |   0.00 |
+| Slice Registers         | 63340 |     0 |     81200 |  78.00 |
+|   Register as Flip Flop | 63340 |     0 |     81200 |  78.00 |
+|   Register as Latch     |     0 |     0 |     81200 |   0.00 |
+| F7 Muxes                | 13798 |     0 |     26600 |  51.87 |
+| F8 Muxes                |  4096 |     0 |     13300 |  30.80 |
++-------------------------+-------+-------+-----------+--------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
 
@@ -55,9 +55,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 482   |          Yes |           - |        Reset |
+| 62592 |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 21    |          Yes |       Reset |            - |
+| 748   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -143,19 +143,21 @@ Table of Contents
 7. Primitives
 -------------
 
-+----------+------+---------------------+
-| Ref Name | Used | Functional Category |
-+----------+------+---------------------+
-| FDCE     |  482 |        Flop & Latch |
-| LUT6     |  452 |                 LUT |
-| LUT4     |  423 |                 LUT |
-| LUT2     |  340 |                 LUT |
-| LUT3     |  254 |                 LUT |
-| CARRY4   |  175 |          CarryLogic |
-| LUT5     |   90 |                 LUT |
-| FDRE     |   21 |        Flop & Latch |
-| LUT1     |   16 |                 LUT |
-+----------+------+---------------------+
++----------+-------+---------------------+
+| Ref Name |  Used | Functional Category |
++----------+-------+---------------------+
+| FDCE     | 62592 |        Flop & Latch |
+| LUT6     | 40963 |                 LUT |
+| MUXF7    | 13798 |               MuxFx |
+| MUXF8    |  4096 |               MuxFx |
+| LUT3     |  2779 |                 LUT |
+| LUT4     |  1150 |                 LUT |
+| LUT2     |   972 |                 LUT |
+| FDRE     |   748 |        Flop & Latch |
+| CARRY4   |   468 |          CarryLogic |
+| LUT5     |   333 |                 LUT |
+| LUT1     |    28 |                 LUT |
++----------+-------+---------------------+
 
 
 8. Black Boxes

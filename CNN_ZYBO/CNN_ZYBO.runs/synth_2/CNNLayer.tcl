@@ -28,8 +28,8 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property ip_output_repo c:/Users/Filippo/Desktop/Electronics/CNNLayer/CNN_ZYBO/CNN_ZYBO.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-set_property generic {InputHeight=5 InputWidth=5 FilterHeight=3 FilterWidth=3 AddressLength=4} [current_fileset]
-read_vhdl -library xil_defaultlib {
+set_property generic {InputHeight=50 InputWidth=50 FilterHeight=5 FilterWidth=5 AddressLength=12 NumBitData=20} [current_fileset]
+read_vhdl -library work {
   C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNTypes.vhd
   C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNMemory.vhd
   C:/Users/Filippo/Desktop/Electronics/CNNLayer/hdl/src/CNNRegister.vhd
@@ -43,8 +43,8 @@ read_vhdl -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/Filippo/Desktop/Electronics/CNNLayer/CNN_ZYBO/CNN_ZYBO.srcs/constrs_1/new/cnn_zybo_constraint.xdc
-set_property used_in_implementation false [get_files C:/Users/Filippo/Desktop/Electronics/CNNLayer/CNN_ZYBO/CNN_ZYBO.srcs/constrs_1/new/cnn_zybo_constraint.xdc]
+read_xdc C:/Users/Filippo/Desktop/Electronics/CNNLayer/CNN_ZYBO/CNN_ZYBO.srcs/constrs_1/new/constraints.xdc
+set_property used_in_implementation false [get_files C:/Users/Filippo/Desktop/Electronics/CNNLayer/CNN_ZYBO/CNN_ZYBO.srcs/constrs_1/new/constraints.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
